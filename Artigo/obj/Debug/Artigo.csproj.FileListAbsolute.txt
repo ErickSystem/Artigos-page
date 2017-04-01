@@ -1,0 +1,37 @@
+E:\Executaveis liberados\Artigo\Artigo\bin\Debug\Artigo.exe.config
+E:\Executaveis liberados\Artigo\Artigo\bin\Debug\Artigo.exe
+E:\Executaveis liberados\Artigo\Artigo\bin\Debug\Artigo.pdb
+E:\Executaveis liberados\Artigo\Artigo\obj\Debug\Artigo.csprojResolveAssemblyReference.cache
+E:\Executaveis liberados\Artigo\Artigo\obj\Debug\Artigo.dashboard.resources
+E:\Executaveis liberados\Artigo\Artigo\obj\Debug\Artigo.Properties.Resources.resources
+E:\Executaveis liberados\Artigo\Artigo\obj\Debug\Artigo.csproj.GenerateResource.Cache
+E:\Executaveis liberados\Artigo\Artigo\obj\Debug\Artigo.exe
+E:\Executaveis liberados\Artigo\Artigo\obj\Debug\Artigo.pdb
+E:\Executaveis liberados\Artigo\Artigo\obj\Debug\Artigo.Login.resources
+E:\Executaveis liberados\Artigo\Artigo\bin\Debug\DbArtigos.mdf
+E:\Executaveis liberados\Artigo\Artigo\bin\Debug\DbArtigos_log.ldf
+D:\PROGRAMING\C#\Artigo\Artigo\bin\Debug\Artigo.exe.config
+D:\PROGRAMING\C#\Artigo\Artigo\obj\Debug\Artigo.exe
+D:\PROGRAMING\C#\Artigo\Artigo\obj\Debug\Artigo.pdb
+D:\PROGRAMING\C#\Artigo\Artigo\bin\Debug\DbArtigos.mdf
+D:\PROGRAMING\C#\Artigo\Artigo\bin\Debug\DbArtigos_log.ldf
+D:\PROGRAMING\C#\Artigo\Artigo\bin\Debug\Artigo.exe
+D:\PROGRAMING\C#\Artigo\Artigo\bin\Debug\Artigo.pdb
+D:\PROGRAMING\C#\Artigo\Artigo\obj\Debug\Artigo.csprojResolveAssemblyReference.cache
+D:\PROGRAMING\C#\Artigo\Artigo\obj\Debug\Artigo.Dashboard.resources
+D:\PROGRAMING\C#\Artigo\Artigo\obj\Debug\Artigo.Login.resources
+D:\PROGRAMING\C#\Artigo\Artigo\obj\Debug\Artigo.Properties.Resources.resources
+D:\PROGRAMING\C#\Artigo\Artigo\obj\Debug\Artigo.csproj.GenerateResource.Cache
+C:\Users\Erick\Desktop\Mega-Nuvem\PROGRAMMING\C#\Artigo\Artigo\bin\Debug\Artigo.exe.config
+C:\Users\Erick\Desktop\Mega-Nuvem\PROGRAMMING\C#\Artigo\Artigo\obj\Debug\Artigo.exe
+C:\Users\Erick\Desktop\Mega-Nuvem\PROGRAMMING\C#\Artigo\Artigo\obj\Debug\Artigo.pdb
+C:\Users\Erick\Desktop\Mega-Nuvem\PROGRAMMING\C#\Artigo\Artigo\bin\Debug\DbArtigos.mdf
+C:\Users\Erick\Desktop\Mega-Nuvem\PROGRAMMING\C#\Artigo\Artigo\bin\Debug\DbArtigos_log.ldf
+C:\Users\Erick\Desktop\Mega-Nuvem\PROGRAMMING\C#\Artigo\Artigo\bin\Debug\Artigo.exe
+C:\Users\Erick\Desktop\Mega-Nuvem\PROGRAMMING\C#\Artigo\Artigo\bin\Debug\Artigo.pdb
+C:\Users\Erick\Desktop\Mega-Nuvem\PROGRAMMING\C#\Artigo\Artigo\obj\Debug\Artigo.csprojResolveAssemblyReference.cache
+C:\Users\Erick\Desktop\Mega-Nuvem\PROGRAMMING\C#\Artigo\Artigo\obj\Debug\Artigo.Cadastrar.resources
+C:\Users\Erick\Desktop\Mega-Nuvem\PROGRAMMING\C#\Artigo\Artigo\obj\Debug\Artigo.Dashboard.resources
+C:\Users\Erick\Desktop\Mega-Nuvem\PROGRAMMING\C#\Artigo\Artigo\obj\Debug\Artigo.Login.resources
+C:\Users\Erick\Desktop\Mega-Nuvem\PROGRAMMING\C#\Artigo\Artigo\obj\Debug\Artigo.Properties.Resources.resources
+C:\Users\Erick\Desktop\Mega-Nuvem\PROGRAMMING\C#\Artigo\Artigo\obj\Debug\Artigo.csproj.GenerateResource.Cache
