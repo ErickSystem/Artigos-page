@@ -15,8 +15,10 @@ namespace Artigo
     {
         public bool logado = false; //utilizada para saber se o usuário está logado
         public Conexao con = null;// abrir o banco
-        public SqlConnection ConnectOpen = null;//Abrir a conexão
+        public static SqlConnection ConnectOpen = null;//Abrir a conexão
         public char PasswordChar { get; set; }
+        public static int perfilUser;
+
         public Login()
         {
             con = new Conexao(); //Instancia da classe conexão
@@ -42,12 +44,12 @@ namespace Artigo
                                  */
 
             {
+                this.Hide();
                 logado = true;
+                perfilUser = Convert.ToInt16(dt.Rows[0][2]);
                 var frm = new Dashboard();
-                Hide();
                 frm.ShowDialog();
-                
-                
+
             }
             else
             {

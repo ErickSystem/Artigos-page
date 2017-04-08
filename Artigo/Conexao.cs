@@ -12,22 +12,18 @@ namespace Artigo
         public SqlConnection ConectarDatabase() {
             try {
 
+                //Criar uma nova instancia
                 con = new SqlConnection();
-                /*
-                 * Utilizar quando eu estiver no Lab da Universidade
-                 * con.ConnectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=E:\executaveis liberados\Artigo\Artigo\DbArtigos.mdf;Integrated Security=True;Connect Timeout=30";
-                 */
-                 /*
-                  * Utilizar quanto eu estiver em casa
-                  */
-                con.ConnectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Erick\Desktop\Mega-Nuvem\PROGRAMMING\C#\Artigo\Artigo\DbArtigos.mdf;Integrated Security=True;Connect Timeout=30";
+                //Utilizado para poder pegar qualquer diretorio para o localDB
+                string path = AppDomain.CurrentDomain.BaseDirectory.ToString().Replace("bin\\Debug\\", "").Replace("bin\\Debug", "");
+                con.ConnectionString = string.Format(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename={0}DbArtigos.mdf;Integrated Security=True;Connect Timeout=30", path);
                 con.Open();
                 return con;
             }
 
-            catch (Exception e) {
+            catch (Exception) {
 
-                throw e;
+                throw;
             }
         }
 

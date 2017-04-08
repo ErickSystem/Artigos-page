@@ -35,3 +35,16 @@ C:\Users\Erick\Desktop\Mega-Nuvem\PROGRAMMING\C#\Artigo\Artigo\obj\Debug\Artigo.
 C:\Users\Erick\Desktop\Mega-Nuvem\PROGRAMMING\C#\Artigo\Artigo\obj\Debug\Artigo.Login.resources
 C:\Users\Erick\Desktop\Mega-Nuvem\PROGRAMMING\C#\Artigo\Artigo\obj\Debug\Artigo.Properties.Resources.resources
 C:\Users\Erick\Desktop\Mega-Nuvem\PROGRAMMING\C#\Artigo\Artigo\obj\Debug\Artigo.csproj.GenerateResource.Cache
+C:\Users\Erick\Desktop\Mega-Nuvem\PROGRAMMING\REPOSITORY\Artigos-page\Artigo\bin\Debug\Artigo.exe.config
+C:\Users\Erick\Desktop\Mega-Nuvem\PROGRAMMING\REPOSITORY\Artigos-page\Artigo\obj\Debug\Artigo.exe
+C:\Users\Erick\Desktop\Mega-Nuvem\PROGRAMMING\REPOSITORY\Artigos-page\Artigo\obj\Debug\Artigo.pdb
+C:\Users\Erick\Desktop\Mega-Nuvem\PROGRAMMING\REPOSITORY\Artigos-page\Artigo\bin\Debug\DbArtigos.mdf
+C:\Users\Erick\Desktop\Mega-Nuvem\PROGRAMMING\REPOSITORY\Artigos-page\Artigo\bin\Debug\DbArtigos_log.ldf
+C:\Users\Erick\Desktop\Mega-Nuvem\PROGRAMMING\REPOSITORY\Artigos-page\Artigo\bin\Debug\Artigo.exe
+C:\Users\Erick\Desktop\Mega-Nuvem\PROGRAMMING\REPOSITORY\Artigos-page\Artigo\bin\Debug\Artigo.pdb
+C:\Users\Erick\Desktop\Mega-Nuvem\PROGRAMMING\REPOSITORY\Artigos-page\Artigo\obj\Debug\Artigo.csprojResolveAssemblyReference.cache
+C:\Users\Erick\Desktop\Mega-Nuvem\PROGRAMMING\REPOSITORY\Artigos-page\Artigo\obj\Debug\Artigo.Cadastrar.resources
+C:\Users\Erick\Desktop\Mega-Nuvem\PROGRAMMING\REPOSITORY\Artigos-page\Artigo\obj\Debug\Artigo.Dashboard.resources
+C:\Users\Erick\Desktop\Mega-Nuvem\PROGRAMMING\REPOSITORY\Artigos-page\Artigo\obj\Debug\Artigo.Login.resources
+C:\Users\Erick\Desktop\Mega-Nuvem\PROGRAMMING\REPOSITORY\Artigos-page\Artigo\obj\Debug\Artigo.Properties.Resources.resources
+C:\Users\Erick\Desktop\Mega-Nuvem\PROGRAMMING\REPOSITORY\Artigos-page\Artigo\obj\Debug\Artigo.csproj.GenerateResource.Cache

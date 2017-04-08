@@ -14,40 +14,29 @@ namespace Artigo
     public partial class Cadastrar : Form
     {
 
-        public bool logado = false; //utilizada para saber se o usuário está logado
-        public Conexao con = null;// abrir o banco
+        private Conexao con = null;// abrir o banco
         public SqlConnection ConnectOpen = null; //Abrir a conexão
-        public int perfil { get; set; } = 3;
+        private int perfilUser;
 
         public Cadastrar()
         {
             InitializeComponent();
-        }
-              
-        public void setPerfil_test(int perfil)
-        {
-            this.perfil = perfil;
-        }
-        public int getPerfil_Test()
-        {
-            return perfil;
+            con = new Conexao();
+            ConnectOpen = con.ConectarDatabase();
         }
 
-       public Cadastrar(int perfil)
+        
+        //Habilita alguns button e o tipo de user no cadastro, somente se o perfil for tipo 3 (Gerente)
+        private void Cadastrar_Load(object sender, EventArgs e)
         {
-            InitializeComponent();
-            int p = getPerfil_Test();
-
-            if (p == 3)
+            if (Login.perfilUser == 3)
             {
-                cmdPerfil.Visible = true;
                 btn_Listar.Visible = true;
+                btn_Cadastrar.Visible = true;
+                cmdPerfil.Visible = true;
             }
         }
-
-
-
-
+        
         private void btn_Cancelar_Click(object sender, EventArgs e)
         {
             Hide();
@@ -56,20 +45,39 @@ namespace Artigo
         private void btn_Cadastrar_Click(object sender, EventArgs e)
         {
             StringBuilder sql = new StringBuilder();
-            sql.Append("Insert into usuarios(Usuario, senha, perfil)");
+            sql.Append("Insert into Usuarios(usuario, senha, perfil)");
             sql.Append("Values (@usuario, @senha, @perfil)");
-            SqlCommand command = null;
 
+            //Utilizado para validar o tipo de usuário cadastrado
+            if (cmdPerfil.Visible)
+                switch (cmdPerfil.Text)
+                {
+                    case "Autor":
+                        perfilUser = 1;
+                        break;
+                    case "Revisor":
+                        perfilUser = 2;
+                        break;
+                    case "Gerente":
+                        perfilUser = 3;
+                        break;
+                }
+
+            SqlCommand command = null;
             try
             {
                 command = new SqlCommand(sql.ToString(), ConnectOpen);
                 command.Parameters.Add(new SqlParameter("@usuario", textUsuario.Text));
                 command.Parameters.Add(new SqlParameter("@senha", textSenha.Text));
-                command.Parameters.Add(new SqlParameter("@perfil", perfil));
+                command.Parameters.Add(new SqlParameter("@perfil", perfilUser));
 
-                MessageBox.Show("Cadastra com sucesso!");
+                //utilizado para executar o comando SQL, se não tiver esse comando não insere nada no banco!
+                command.ExecuteNonQuery();
+
+                MessageBox.Show("Cadastrado com sucesso!");
                 Hide();
-            }catch(Exception ex)
+
+            }catch(Exception)
             {
                 MessageBox.Show("Erro ao cadastrar");
                 throw;
@@ -85,5 +93,6 @@ namespace Artigo
         {
             textSenha.PasswordChar = '*';
         }
+
     }
 }

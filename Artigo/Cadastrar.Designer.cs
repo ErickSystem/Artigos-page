@@ -142,6 +142,7 @@
             this.Controls.Add(this.label1);
             this.Name = "Cadastrar";
             this.Text = "Cadastrar";
+            this.Load += new System.EventHandler(this.Cadastrar_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

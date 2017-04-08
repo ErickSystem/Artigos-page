@@ -19,25 +19,30 @@ namespace Artigo
 
         private void dashboard_Load(object sender, EventArgs e)
         {
-           /* var frm = new Login();
-            frm.ShowDialog();
 
-            if (frm.logado)
+            string dia = DateTime.Now.Day.ToString();
+            string mes = DateTime.Now.Month.ToString();
+            string ano = DateTime.Now.Year.ToString();
+
+            label_data.Text = "0" + dia + "/" + "0" + mes + "/" + ano;
+            if (Login.perfilUser == 3)
             {
-                frm.Hide();
+                btn_cadastro_user.Visible = true;
+                label_user.Text = "Gerente";
             }
-            else
+            else if(Login.perfilUser == 2)
             {
-                MessageBox.Show("Você não tem permissão para acessar o Dashboard");
-                frm.Hide();
-            }*/
+                label_user.Text = "Revisor";
+            }else
+            {
+                label_user.Text = "Autor";
+            }
         }
 
-        private void button1_Click(object sender, EventArgs e)
+       private void btn_cadastro(object sender, EventArgs e)
         {
-            Cadastrar frms = new Cadastrar(3);
+            Cadastrar frms = new Cadastrar();
             frms.ShowDialog();
-
         }
     }
 }
