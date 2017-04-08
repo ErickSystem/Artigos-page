@@ -19,12 +19,13 @@ namespace Artigo
 
         private void dashboard_Load(object sender, EventArgs e)
         {
-
+            //recebe a data atual
             string dia = DateTime.Now.Day.ToString();
             string mes = DateTime.Now.Month.ToString();
             string ano = DateTime.Now.Year.ToString();
-
+            //passa a data para o Label e apresenta na tela
             label_data.Text = "0" + dia + "/" + "0" + mes + "/" + ano;
+            //Mostrar na tela qual tipo de usuário está logado
             if (Login.perfilUser == 3)
             {
                 btn_cadastro_user.Visible = true;
@@ -33,9 +34,12 @@ namespace Artigo
             else if(Login.perfilUser == 2)
             {
                 label_user.Text = "Revisor";
-            }else
+            }else if(Login.perfilUser == 1)
             {
                 label_user.Text = "Autor";
+            }else
+            {
+                label_user.Text = "sem permissões";
             }
         }
 

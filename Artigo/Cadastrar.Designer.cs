@@ -76,6 +76,7 @@
             // 
             this.cmdPerfil.FormattingEnabled = true;
             this.cmdPerfil.Items.AddRange(new object[] {
+            "ND",
             "Gerente",
             "Autor",
             "Revisor"});
