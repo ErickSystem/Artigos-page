@@ -37,6 +37,7 @@
             this.btn_Cadastrar = new System.Windows.Forms.Button();
             this.btn_Cancelar = new System.Windows.Forms.Button();
             this.btn_Listar = new System.Windows.Forms.Button();
+            this.btn_alterar = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -127,11 +128,23 @@
             this.btn_Listar.Visible = false;
             this.btn_Listar.Click += new System.EventHandler(this.btn_Listar_Click);
             // 
+            // btn_alterar
+            // 
+            this.btn_alterar.Location = new System.Drawing.Point(180, 235);
+            this.btn_alterar.Name = "btn_alterar";
+            this.btn_alterar.Size = new System.Drawing.Size(120, 34);
+            this.btn_alterar.TabIndex = 9;
+            this.btn_alterar.Text = "Alterar";
+            this.btn_alterar.UseVisualStyleBackColor = true;
+            this.btn_alterar.Visible = false;
+            this.btn_alterar.Click += new System.EventHandler(this.btn_alterar_Click);
+            // 
             // Cadastrar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(480, 297);
+            this.Controls.Add(this.btn_alterar);
             this.Controls.Add(this.btn_Listar);
             this.Controls.Add(this.btn_Cancelar);
             this.Controls.Add(this.btn_Cadastrar);
@@ -143,6 +156,7 @@
             this.Controls.Add(this.label1);
             this.Name = "Cadastrar";
             this.Text = "Cadastrar";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Cadastrar_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -160,5 +174,6 @@
         private System.Windows.Forms.Button btn_Cadastrar;
         private System.Windows.Forms.Button btn_Cancelar;
         private System.Windows.Forms.Button btn_Listar;
+        private System.Windows.Forms.Button btn_alterar;
     }
 }

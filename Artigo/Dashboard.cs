@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -19,27 +20,28 @@ namespace Artigo
 
         private void dashboard_Load(object sender, EventArgs e)
         {
-            //recebe a data atual
-            string dia = DateTime.Now.Day.ToString();
-            string mes = DateTime.Now.Month.ToString();
-            string ano = DateTime.Now.Year.ToString();
-            //passa a data para o Label e apresenta na tela
-            label_data.Text = "0" + dia + "/" + "0" + mes + "/" + ano;
-            //Mostrar na tela qual tipo de usuário está logado
+
+            //mostrar a data que o usuario está logado
+            DataLogin data = new DataLogin();
+            label_data.Text = data.retornarData();
+
+            label_user.Text = Login.nomeUser;
+
+             //Mostrar na tela qual tipo de usuário está logado
             if (Login.perfilUser == 3)
             {
                 btn_cadastro_user.Visible = true;
-                label_user.Text = "Gerente";
+                label_tipoUser.Text = "Gerente";
             }
             else if(Login.perfilUser == 2)
             {
-                label_user.Text = "Revisor";
+                label_tipoUser.Text = "Revisor";
             }else if(Login.perfilUser == 1)
             {
-                label_user.Text = "Autor";
+                label_tipoUser.Text = "Autor";
             }else
             {
-                label_user.Text = "sem permissões";
+                label_tipoUser.Text = "sem permissões";
             }
         }
 
@@ -47,6 +49,14 @@ namespace Artigo
         {
             Cadastrar frms = new Cadastrar();
             frms.ShowDialog();
+        }
+
+        private void btn_sair_Click(object sender, EventArgs e)
+        {
+            Hide();
+            Login login = new Login();
+            login.ShowDialog();
+            
         }
     }
 }

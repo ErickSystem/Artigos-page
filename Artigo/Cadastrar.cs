@@ -43,6 +43,7 @@ namespace Artigo
             Hide();
         }
 
+        //Metodo Cadastrar
         private void btn_Cadastrar_Click(object sender, EventArgs e)
         {
             //variável que recebe o retorno do metódo
@@ -96,8 +97,44 @@ namespace Artigo
         }//fim do if de validação do Formulário
 
      
+
+        //Metedo listar
         private void btn_Listar_Click(object sender, EventArgs e)
         {
+            ListarUsuario listuser = new ListarUsuario();
+            listuser.ShowDialog();
+
+            //Verifica se foi selecionado algum item
+            if (listuser.usuarioSelecionado == "")
+                return;
+
+            var conn = Login.ConnectOpen;
+            //Buscar usuário selecionado
+            string sql = "Select * from usuarios where Usuario = '" + listuser.usuarioSelecionado + "'";
+            DataTable dt = new DataTable();
+            SqlDataAdapter da = new SqlDataAdapter(sql, conn);
+            da.Fill(dt);
+
+            string perfilSelecionado="";
+
+            textUsuario.Text = dt.Rows[0][0].ToString();
+            textSenha.Text = dt.Rows[0][1].ToString();
+
+             switch (dt.Rows[0][2].ToString())
+            {
+                case "1":
+                    perfilSelecionado = "Autor";
+                    break;
+                case "2":
+                    perfilSelecionado = "Revisor";
+                    break;
+                case "3":
+                    perfilSelecionado = "Gerente";
+                    break;
+            }
+            cmdPerfil.Text = perfilSelecionado;
+            btn_Cadastrar.Visible = false;
+            btn_alterar.Visible = true;
 
         }
 
@@ -136,5 +173,47 @@ namespace Artigo
             return result;
         }
 
+        private void btn_alterar_Click(object sender, EventArgs e)
+        {
+           /* StringBuilder sql = new StringBuilder();
+            sql.Append("update Usuarios set(usuario, senha, perfil)");
+            sql.Append("Values (@usuario, @senha, @perfil)");
+
+            //Utilizado para validar o tipo de usuário cadastrado
+            if (cmdPerfil.Visible)
+                switch (cmdPerfil.Text)
+                {
+                    case "Autor":
+                        perfilUser = 1;
+                        //break;
+                    case "Revisor":
+                        perfilUser = 2;
+                        break;
+                    case "Gerente":
+                        perfilUser = 3;
+                        break;
+                }
+
+            SqlCommand command = null;
+            try
+            {
+                command = new SqlCommand(sql.ToString(), ConnectOpen);
+                command.Parameters.Add(new SqlParameter("@usuario", textUsuario.Text));
+                command.Parameters.Add(new SqlParameter("@senha", textSenha.Text));
+                command.Parameters.Add(new SqlParameter("@perfil", perfilUser));
+
+                //utilizado para executar o comando SQL, se não tiver esse comando não insere nada no banco!
+                command.ExecuteNonQuery();
+
+                MessageBox.Show("Cadastrado com sucesso!");
+                Hide();
+
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Erro ao cadastrar");
+                throw;
+            }*/
+        }
     }
 }

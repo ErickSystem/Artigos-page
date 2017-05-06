@@ -18,6 +18,7 @@ namespace Artigo
         public static SqlConnection ConnectOpen = null;//Abrir a conexão
         public char PasswordChar { get; set; }
         public static int perfilUser;
+        public static string nomeUser;
 
         public Login()
         {
@@ -47,6 +48,7 @@ namespace Artigo
                 this.Hide();
                 logado = true;
                 perfilUser = Convert.ToInt16(dt.Rows[0][2]);
+                nomeUser = Convert.ToString(dt.Rows[0][0]);
                 var frm = new Dashboard();
                 frm.ShowDialog();
 
