@@ -48,3 +48,18 @@ C:\Users\Erick\Desktop\Mega-Nuvem\PROGRAMMING\REPOSITORY\Artigos-page\Artigo\obj
 C:\Users\Erick\Desktop\Mega-Nuvem\PROGRAMMING\REPOSITORY\Artigos-page\Artigo\obj\Debug\Artigo.Login.resources
 C:\Users\Erick\Desktop\Mega-Nuvem\PROGRAMMING\REPOSITORY\Artigos-page\Artigo\obj\Debug\Artigo.Properties.Resources.resources
 C:\Users\Erick\Desktop\Mega-Nuvem\PROGRAMMING\REPOSITORY\Artigos-page\Artigo\obj\Debug\Artigo.csproj.GenerateResource.Cache
+E:\executaveis liberados\Artigos-page\Artigo\bin\Debug\Artigo.exe.config
+E:\executaveis liberados\Artigos-page\Artigo\obj\Debug\Artigo.exe
+E:\executaveis liberados\Artigos-page\Artigo\obj\Debug\Artigo.pdb
+E:\executaveis liberados\Artigos-page\Artigo\bin\Debug\DbArtigos.mdf
+E:\executaveis liberados\Artigos-page\Artigo\bin\Debug\DbArtigos_log.ldf
+E:\executaveis liberados\Artigos-page\Artigo\bin\Debug\Artigo.exe
+E:\executaveis liberados\Artigos-page\Artigo\bin\Debug\Artigo.pdb
+E:\executaveis liberados\Artigos-page\Artigo\obj\Debug\Artigo.csprojResolveAssemblyReference.cache
+E:\executaveis liberados\Artigos-page\Artigo\obj\Debug\Artigo.Cadastrar.resources
+E:\executaveis liberados\Artigos-page\Artigo\obj\Debug\Artigo.Dashboard.resources
+E:\executaveis liberados\Artigos-page\Artigo\obj\Debug\Artigo.Login.resources
+E:\executaveis liberados\Artigos-page\Artigo\obj\Debug\Artigo.Properties.Resources.resources
+E:\executaveis liberados\Artigos-page\Artigo\obj\Debug\Artigo.csproj.GenerateResource.Cache
+E:\executaveis liberados\Artigos-page\Artigo\obj\Debug\Artigo.ListarUsuario.resources
+C:\Users\Erick\Desktop\Mega-Nuvem\PROGRAMMING\REPOSITORY\Artigos-page\Artigo\obj\Debug\Artigo.ListarUsuario.resources

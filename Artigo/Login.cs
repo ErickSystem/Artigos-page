@@ -18,6 +18,7 @@ namespace Artigo
         public static SqlConnection ConnectOpen = null;//Abrir a conexão
         public char PasswordChar { get; set; }
         public static int perfilUser;
+        public static string nomeUser;
 
         public Login()
         {
@@ -34,7 +35,7 @@ namespace Artigo
         private void btn_login_Click(object sender, EventArgs e)
         {
           
-            string SqlCommand = "Select * from Usuarios where usuario = '"+textUsuario.Text +"'and senha = '" + textSenha.Text+"'";
+            string SqlCommand = "Select * from Usuarios where login = '"+textUsuario.Text +"'and senha = '" + textSenha.Text+"'";
             DataTable dt = new DataTable();
             SqlDataAdapter da = new SqlDataAdapter(SqlCommand, ConnectOpen);// Adapta os dados para linguagem SQL
             da.Fill(dt); //passa os dados para serem executados.
@@ -46,7 +47,8 @@ namespace Artigo
             {
                 this.Hide();
                 logado = true;
-                perfilUser = Convert.ToInt16(dt.Rows[0][2]);
+                perfilUser = Convert.ToInt16(dt.Rows[0][4]);
+                nomeUser = Convert.ToString(dt.Rows[0][1]);
                 var frm = new Dashboard();
                 frm.ShowDialog();
 
