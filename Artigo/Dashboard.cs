@@ -25,6 +25,7 @@ namespace Artigo
             DataLogin data = new DataLogin();
             label_data.Text = data.retornarData();
 
+
             label_user.Text = Login.nomeUser;
 
              //Mostrar na tela qual tipo de usuário está logado
@@ -53,7 +54,7 @@ namespace Artigo
 
         private void btn_sair_Click(object sender, EventArgs e)
         {
-            Hide();
+            this.Hide();
             Login login = new Login();
             login.ShowDialog();
             

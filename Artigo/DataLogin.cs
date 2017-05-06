@@ -8,9 +8,9 @@ namespace Artigo
 {
     public class DataLogin
     {
-        string dia;
-        string mes;
-        string ano;
+        public string dia;
+        public string mes;
+        public string ano;
 
         string data;
         public string retornarData()
