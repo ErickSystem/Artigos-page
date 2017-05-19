@@ -20,7 +20,7 @@ namespace Artigo
              ano = DateTime.Now.Year.ToString();
             //passa a data para o Label e apresenta na tela
 
-            return data = "0" + dia + "/" + "0" + mes + "/" + ano;
+            return data = dia + "/" + "0" + mes + "/" + ano;
         }
         //recebe a data atual
 

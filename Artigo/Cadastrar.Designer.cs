@@ -32,7 +32,6 @@
             this.textUsuario = new System.Windows.Forms.TextBox();
             this.textSenha = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.cmdPerfil = new System.Windows.Forms.ComboBox();
             this.label_perfil = new System.Windows.Forms.Label();
             this.btn_Cadastrar = new System.Windows.Forms.Button();
             this.btn_Cancelar = new System.Windows.Forms.Button();
@@ -41,6 +40,7 @@
             this.text_nome = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.btn_Excluir = new System.Windows.Forms.Button();
+            this.cmdPerfil = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // label1
@@ -75,20 +75,6 @@
             this.label2.Size = new System.Drawing.Size(38, 13);
             this.label2.TabIndex = 2;
             this.label2.Text = "Senha";
-            // 
-            // cmdPerfil
-            // 
-            this.cmdPerfil.FormattingEnabled = true;
-            this.cmdPerfil.Items.AddRange(new object[] {
-            "ND",
-            "Gerente",
-            "Autor",
-            "Revisor"});
-            this.cmdPerfil.Location = new System.Drawing.Point(42, 270);
-            this.cmdPerfil.Name = "cmdPerfil";
-            this.cmdPerfil.Size = new System.Drawing.Size(121, 21);
-            this.cmdPerfil.TabIndex = 4;
-            this.cmdPerfil.Visible = false;
             // 
             // label_perfil
             // 
@@ -169,6 +155,22 @@
             this.btn_Excluir.Visible = false;
             this.btn_Excluir.Click += new System.EventHandler(this.btn_Excluir_Click);
             // 
+            // cmdPerfil
+            // 
+            this.cmdPerfil.FormattingEnabled = true;
+            this.cmdPerfil.Items.AddRange(new object[] {
+            "Selecionar",
+            "Gerente",
+            "Autor",
+            "Revisor"});
+            this.cmdPerfil.Location = new System.Drawing.Point(42, 270);
+            this.cmdPerfil.Name = "cmdPerfil";
+            this.cmdPerfil.Size = new System.Drawing.Size(121, 21);
+            this.cmdPerfil.TabIndex = 4;
+            this.cmdPerfil.Tag = "Selecionar";
+            this.cmdPerfil.Visible = false;
+            this.cmdPerfil.SelectedIndexChanged += new System.EventHandler(this.cmdPerfil_SelectedIndexChanged);
+            // 
             // Cadastrar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -202,7 +204,6 @@
         private System.Windows.Forms.TextBox textUsuario;
         private System.Windows.Forms.TextBox textSenha;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ComboBox cmdPerfil;
         private System.Windows.Forms.Label label_perfil;
         private System.Windows.Forms.Button btn_Cadastrar;
         private System.Windows.Forms.Button btn_Cancelar;
@@ -211,5 +212,6 @@
         private System.Windows.Forms.TextBox text_nome;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btn_Excluir;
+        private System.Windows.Forms.ComboBox cmdPerfil;
     }
 }

@@ -18,6 +18,7 @@ namespace Artigo
         private int perfilUser=0;
         private int id;
 
+       
         public Cadastrar()
         {
             InitializeComponent();
@@ -66,6 +67,9 @@ namespace Artigo
                             break;
                         case "Gerente":
                             perfilUser = 3;
+                            break;
+                        case "Selecionar":
+                            perfilUser = 4;
                             break;
                     }
                 SqlCommand command = null;
@@ -251,6 +255,11 @@ namespace Artigo
                     }
                 }//if de confirmação de permissão e retorno do ID
             }//id de resposta
+        }
+
+        private void cmdPerfil_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
