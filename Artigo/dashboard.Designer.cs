@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.btn_cadastro_user = new System.Windows.Forms.Button();
             this.btn_Artigos = new System.Windows.Forms.Button();
             this.label_user = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -37,20 +36,9 @@
             this.btn_sair = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.label_tipoUser = new System.Windows.Forms.Label();
+            this.btn_cadastro_user = new System.Windows.Forms.Button();
+            this.btn_Status = new System.Windows.Forms.Button();
             this.SuspendLayout();
-            // 
-            // btn_cadastro_user
-            // 
-            this.btn_cadastro_user.Image = global::Artigo.Properties.Resources.user_img;
-            this.btn_cadastro_user.Location = new System.Drawing.Point(16, 132);
-            this.btn_cadastro_user.Name = "btn_cadastro_user";
-            this.btn_cadastro_user.Size = new System.Drawing.Size(140, 161);
-            this.btn_cadastro_user.TabIndex = 0;
-            this.btn_cadastro_user.Text = "Cadastrar Usuário";
-            this.btn_cadastro_user.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btn_cadastro_user.UseVisualStyleBackColor = true;
-            this.btn_cadastro_user.Visible = false;
-            this.btn_cadastro_user.Click += new System.EventHandler(this.btn_cadastro);
             // 
             // btn_Artigos
             // 
@@ -60,6 +48,7 @@
             this.btn_Artigos.TabIndex = 1;
             this.btn_Artigos.Text = "Artigos";
             this.btn_Artigos.UseVisualStyleBackColor = true;
+            this.btn_Artigos.Click += new System.EventHandler(this.btn_Artigos_Click);
             // 
             // label_user
             // 
@@ -101,7 +90,7 @@
             // 
             // btn_sair
             // 
-            this.btn_sair.Location = new System.Drawing.Point(683, 13);
+            this.btn_sair.Location = new System.Drawing.Point(1100, 9);
             this.btn_sair.Name = "btn_sair";
             this.btn_sair.Size = new System.Drawing.Size(75, 23);
             this.btn_sair.TabIndex = 7;
@@ -128,11 +117,35 @@
             this.label_tipoUser.Size = new System.Drawing.Size(0, 24);
             this.label_tipoUser.TabIndex = 8;
             // 
+            // btn_cadastro_user
+            // 
+            this.btn_cadastro_user.Image = global::Artigo.Properties.Resources.user_img;
+            this.btn_cadastro_user.Location = new System.Drawing.Point(16, 132);
+            this.btn_cadastro_user.Name = "btn_cadastro_user";
+            this.btn_cadastro_user.Size = new System.Drawing.Size(140, 161);
+            this.btn_cadastro_user.TabIndex = 0;
+            this.btn_cadastro_user.Text = "Cadastrar Usuário";
+            this.btn_cadastro_user.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btn_cadastro_user.UseVisualStyleBackColor = true;
+            this.btn_cadastro_user.Visible = false;
+            this.btn_cadastro_user.Click += new System.EventHandler(this.btn_cadastro);
+            // 
+            // btn_Status
+            // 
+            this.btn_Status.Location = new System.Drawing.Point(314, 133);
+            this.btn_Status.Name = "btn_Status";
+            this.btn_Status.Size = new System.Drawing.Size(146, 160);
+            this.btn_Status.TabIndex = 10;
+            this.btn_Status.Text = "Status aprovação";
+            this.btn_Status.UseVisualStyleBackColor = true;
+            this.btn_Status.Click += new System.EventHandler(this.btn_Status_Click);
+            // 
             // Dashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(784, 661);
+            this.ClientSize = new System.Drawing.Size(1187, 661);
+            this.Controls.Add(this.btn_Status);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label_tipoUser);
             this.Controls.Add(this.btn_sair);
@@ -162,6 +175,7 @@
         private System.Windows.Forms.Button btn_sair;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label_tipoUser;
+        private System.Windows.Forms.Button btn_Status;
     }
 }
 

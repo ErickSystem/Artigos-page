@@ -63,3 +63,7 @@ E:\executaveis liberados\Artigos-page\Artigo\obj\Debug\Artigo.Properties.Resourc
 E:\executaveis liberados\Artigos-page\Artigo\obj\Debug\Artigo.csproj.GenerateResource.Cache
 E:\executaveis liberados\Artigos-page\Artigo\obj\Debug\Artigo.ListarUsuario.resources
 C:\Users\Erick\Desktop\Mega-Nuvem\PROGRAMMING\REPOSITORY\Artigos-page\Artigo\obj\Debug\Artigo.ListarUsuario.resources
+C:\Users\Erick\Desktop\Mega-Nuvem\PROGRAMMING\REPOSITORY\Artigos-page\Artigo\obj\Debug\Artigo.Artigo.resources
+C:\Users\Erick\Desktop\Mega-Nuvem\PROGRAMMING\REPOSITORY\Artigos-page\Artigo\obj\Debug\Artigo.Justificar.resources
+C:\Users\Erick\Desktop\Mega-Nuvem\PROGRAMMING\REPOSITORY\Artigos-page\Artigo\obj\Debug\Artigo.Status_artigos.resources
+C:\Users\Erick\Desktop\Mega-Nuvem\PROGRAMMING\REPOSITORY\Artigos-page\Artigo\obj\Debug\Artigo.ListarArtigo.resources

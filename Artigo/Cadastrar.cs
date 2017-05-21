@@ -15,7 +15,7 @@ namespace Artigo
     { 
         private Conexao con = null;// abrir o banco
         public SqlConnection ConnectOpen = null; //Abrir a conexão
-        private int perfilUser=0;
+        private int perfilUser=1;
         private int id;
 
         public Cadastrar()
@@ -33,6 +33,17 @@ namespace Artigo
                 btn_Cadastrar.Visible = true;
                 label_perfil.Visible = true;
                 cmdPerfil.Visible = true;
+
+              /*  Dashboard dash = new Dashboard();
+                int logado = 0;
+                logado = dash.deslogar(logado);
+                //se o buttun "Sair" criado em Dashboard retornar FALSE (retorno do metodo deslogar()), então os buttuns abaixo serão desabilitados.
+                if (logado == 1)
+                {
+                    btn_Listar.Visible = false;
+                    label_perfil.Visible = false;
+                    cmdPerfil.Visible = false;
+                }*/
             }
         }
         
