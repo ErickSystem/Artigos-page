@@ -15,16 +15,10 @@ namespace Artigo
     { 
         private Conexao con = null;// abrir o banco
         public SqlConnection ConnectOpen = null; //Abrir a conexão
-<<<<<<< HEAD
+
         private int perfilUser=1;
         private int id;
 
-=======
-        private int perfilUser=0;
-        private int id;
-
-       
->>>>>>> fbe72b702681d7a8197e185615d39ee0462346ae
         public Cadastrar()
         {
             InitializeComponent();

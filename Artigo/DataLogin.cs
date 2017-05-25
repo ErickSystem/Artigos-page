@@ -22,14 +22,11 @@ namespace Artigo
              mes = DateTime.Now.Month.ToString();
              ano = DateTime.Now.Year.ToString();
             //passa a data para o Label e apresenta na tela
-<<<<<<< HEAD
+
             hora = DateTime.Now.Hour.ToString();
             minuto = DateTime.Now.Minute.ToString();
             return data = dia + "/" + "0" + mes + "/" + ano + " " + hora + ":" + minuto;
-=======
 
-            return data = dia + "/" + "0" + mes + "/" + ano;
->>>>>>> fbe72b702681d7a8197e185615d39ee0462346ae
         }
         //recebe a data atual
        
