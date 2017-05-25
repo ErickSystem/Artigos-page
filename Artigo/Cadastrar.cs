@@ -169,7 +169,7 @@ namespace Artigo
             //Verifica se foi selecionado o usuário no "LOAD"
             if(id > 0)
             {
-                string sql = "UPDATE Usuarios SET nome = @nome, login = @login, senha = @senha, perfil = @perfil WHERE idusuario = @id";
+                string sql = "UPDATE Usuarios SET nome = @nome, login = @login, senha = @senha, perfil = @perfil WHERE idusuario = @idusuario";
                 SqlCommand command = null;
                 try
                 {
@@ -245,7 +245,7 @@ namespace Artigo
             {
                 if (id > 0 && Login.perfilUser == 3)
                 {
-                    string sql = "DELETE FROM Usuarios WHERE idusuario = @id";
+                    string sql = "DELETE FROM Usuarios WHERE idusuario = @idusuario";
                     SqlCommand command = null;
                     try
                     {

@@ -28,18 +28,19 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.datagrid_status = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.datagrid_status)).BeginInit();
             this.SuspendLayout();
             // 
-            // dataGridView1
+            // datagrid_status
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(66, 124);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(1092, 486);
-            this.dataGridView1.TabIndex = 0;
+            this.datagrid_status.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.datagrid_status.Location = new System.Drawing.Point(66, 124);
+            this.datagrid_status.Name = "datagrid_status";
+            this.datagrid_status.Size = new System.Drawing.Size(1092, 486);
+            this.datagrid_status.TabIndex = 0;
+            this.datagrid_status.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.datagrids_status);
             // 
             // label1
             // 
@@ -57,11 +58,12 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1205, 644);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.datagrid_status);
             this.Name = "Status_artigos";
             this.Text = "Status_artigos";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.Load += new System.EventHandler(this.Status_artigos_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.datagrid_status)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -69,7 +71,7 @@
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView datagrid_status;
         private System.Windows.Forms.Label label1;
     }
 }

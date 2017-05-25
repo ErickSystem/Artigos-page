@@ -21,5 +21,10 @@ namespace Artigo
         {
 
         }
+
+        private void Enviados_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
