@@ -36,9 +36,9 @@
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(220, 124);
+            this.dataGridView1.Location = new System.Drawing.Point(66, 124);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(826, 486);
+            this.dataGridView1.Size = new System.Drawing.Size(1092, 486);
             this.dataGridView1.TabIndex = 0;
             // 
             // label1
@@ -60,6 +60,7 @@
             this.Controls.Add(this.dataGridView1);
             this.Name = "Status_artigos";
             this.Text = "Status_artigos";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

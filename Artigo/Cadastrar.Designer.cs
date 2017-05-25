@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-
             this.label1 = new System.Windows.Forms.Label();
             this.textUsuario = new System.Windows.Forms.TextBox();
             this.textSenha = new System.Windows.Forms.TextBox();
@@ -81,7 +80,6 @@
             // 
             this.cmdPerfil.FormattingEnabled = true;
             this.cmdPerfil.Items.AddRange(new object[] {
-            "ND",
             "Gerente",
             "Autor",
             "Revisor"});

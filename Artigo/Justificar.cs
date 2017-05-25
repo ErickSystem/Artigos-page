@@ -25,23 +25,26 @@ namespace Artigo
 
         private void btn_Salvar_Click(object sender, EventArgs e)
         {
-            string nomeRevisor = Login.nomeUser;
+
+            int id_usuario = Login.idusuario;
+            int id_artigo = Artigo.idartigo;
             string status = "sem revisao";
             DataLogin data = new DataLogin();
             string datahora_avaliacao = data.retornarData();
 
             StringBuilder sql = new StringBuilder();
-            sql.Append("Insert into Revisao(nome_revisor, status, justificativa, datahora_avaliacao)");
-            sql.Append("Values (@nome_revisor, @status, @justificativa, @datahora_avaliacao)");
+            sql.Append("Insert into Revisao(status, justificativa, datahora_avaliacao,id_artigo,id_usuario)");
+            sql.Append("Values (@status, @justificativa, @datahora_avaliacao,@id_artigo,@id_usuario)");
 
             SqlCommand command = null;
             try
             {
                 command = new SqlCommand(sql.ToString(), ConnectOpen);
-                command.Parameters.Add(new SqlParameter("@nome_revisor", nomeRevisor));
                 command.Parameters.Add(new SqlParameter("@status", status));
                 command.Parameters.Add(new SqlParameter("@justificativa", text_Justificativa.Text));
                 command.Parameters.Add(new SqlParameter("@datahora_avaliacao", datahora_avaliacao));
+                command.Parameters.Add(new SqlParameter("@id_artigo", id_artigo));
+                command.Parameters.Add(new SqlParameter("@id_usuario", id_usuario));
 
                 //utilizado para executar o comando SQL, se não tiver esse comando não insere nada no banco!
                 command.ExecuteNonQuery();

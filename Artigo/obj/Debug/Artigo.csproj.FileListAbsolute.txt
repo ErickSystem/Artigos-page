@@ -67,3 +67,5 @@ C:\Users\Erick\Desktop\Mega-Nuvem\PROGRAMMING\REPOSITORY\Artigos-page\Artigo\obj
 C:\Users\Erick\Desktop\Mega-Nuvem\PROGRAMMING\REPOSITORY\Artigos-page\Artigo\obj\Debug\Artigo.Justificar.resources
 C:\Users\Erick\Desktop\Mega-Nuvem\PROGRAMMING\REPOSITORY\Artigos-page\Artigo\obj\Debug\Artigo.Status_artigos.resources
 C:\Users\Erick\Desktop\Mega-Nuvem\PROGRAMMING\REPOSITORY\Artigos-page\Artigo\obj\Debug\Artigo.ListarArtigo.resources
+C:\Users\Erick\Desktop\Mega-Nuvem\PROGRAMMING\REPOSITORY\Artigos-page\Artigo\obj\Debug\Artigo.AreaInteresse.resources
+C:\Users\Erick\Desktop\Mega-Nuvem\PROGRAMMING\REPOSITORY\Artigos-page\Artigo\obj\Debug\Artigo.Enviados.resources

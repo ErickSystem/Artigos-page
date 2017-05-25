@@ -42,6 +42,10 @@ namespace Artigo
             {
                 label_tipoUser.Text = "sem permissões";
             }
+            if(Login.perfilUser == 3)
+            {
+                btn_areaInteresse.Visible = true;
+            }
         }
        private void btn_cadastro(object sender, EventArgs e)
         {
@@ -75,6 +79,18 @@ namespace Artigo
         {
             Status_artigos sa = new Status_artigos();
             sa.ShowDialog();
+        }
+
+        private void btn_areaInteresse_Click(object sender, EventArgs e)
+        {
+            var area = new AreaInteresse();
+            area.ShowDialog();
+        }
+
+        private void btn_endiados_Click(object sender, EventArgs e)
+        {
+            var enviados = new Enviados();
+            enviados.ShowDialog();
         }
     }
 }

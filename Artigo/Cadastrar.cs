@@ -118,7 +118,7 @@ namespace Artigo
 
             var conn = Login.ConnectOpen;
             //Buscar usuário selecionado
-            string sql = "Select * from Usuarios where id = '" + listuser.usuarioSelecionado + "'";
+            string sql = "Select * from Usuarios where idusuario = '" + listuser.usuarioSelecionado + "'";
             DataTable dt = new DataTable();
             SqlDataAdapter da = new SqlDataAdapter(sql, conn);
             da.Fill(dt);
@@ -169,12 +169,12 @@ namespace Artigo
             //Verifica se foi selecionado o usuário no "LOAD"
             if(id > 0)
             {
-                string sql = "UPDATE Usuarios SET nome = @nome, login = @login, senha = @senha, perfil = @perfil WHERE id = @id";
+                string sql = "UPDATE Usuarios SET nome = @nome, login = @login, senha = @senha, perfil = @perfil WHERE idusuario = @id";
                 SqlCommand command = null;
                 try
                 {
                     command = new SqlCommand(sql, ConnectOpen);
-                    command.Parameters.Add(new SqlParameter("@id", id));
+                    command.Parameters.Add(new SqlParameter("@idusuario", id));
                     command.Parameters.Add(new SqlParameter("@nome", text_nome.Text));
                     command.Parameters.Add(new SqlParameter("@login", textUsuario.Text));
                     command.Parameters.Add(new SqlParameter("@senha", textSenha.Text));
@@ -245,12 +245,12 @@ namespace Artigo
             {
                 if (id > 0 && Login.perfilUser == 3)
                 {
-                    string sql = "DELETE FROM Usuarios WHERE id = @id";
+                    string sql = "DELETE FROM Usuarios WHERE idusuario = @id";
                     SqlCommand command = null;
                     try
                     {
                         command = new SqlCommand(sql, ConnectOpen);
-                        command.Parameters.Add(new SqlParameter("@id", id));
+                        command.Parameters.Add(new SqlParameter("@idusuario", id));
 
                         //utilizado para executar o comando SQL, se não tiver esse comando não insere nada no banco!
                         command.ExecuteNonQuery();

@@ -15,7 +15,7 @@ namespace Artigo
     {
         private Conexao con = null;// abrir o banco
         public SqlConnection ConnectOpen = null; //Abrir a conexão
-        private int id;
+        public static int idartigo;
         private string saberStatus;
 
         public Artigo()
@@ -43,10 +43,10 @@ namespace Artigo
         private void btn_Submeter_Click(object sender, EventArgs e)
         {
             StringBuilder sql = new StringBuilder();
-            sql.Append("Insert into Artigo(nome_autor, titulo, conteudo, datahora_submissao)");
-            sql.Append("Values (@nome_autor, @titulo, @conteudo, @datahora_submissao)");
+            sql.Append("Insert into Artigo(titulo, conteudo, datahora_submissao,id_usuario)");
+            sql.Append("Values (@titulo, @conteudo, @datahora_submissao,@id_usuario)");
 
-            string nome_autor = Login.nomeUser;
+            var id_usuario = Login.idusuario;
             DataLogin ds = new DataLogin();
             string datahora_submissao = ds.retornarData();
 
@@ -54,10 +54,11 @@ namespace Artigo
             try
             {
                 command = new SqlCommand(sql.ToString(), ConnectOpen);
-                command.Parameters.Add(new SqlParameter("@nome_autor", nome_autor));
                 command.Parameters.Add(new SqlParameter("@titulo", artigo_Titulo.Text));
                 command.Parameters.Add(new SqlParameter("@conteudo", artigo_Conteudo.Text));
                 command.Parameters.Add(new SqlParameter("@datahora_submissao", datahora_submissao));
+                command.Parameters.Add(new SqlParameter("@id_usuario", id_usuario));
+
 
                 //utilizado para executar o comando SQL, se não tiver esse comando não insere nada no banco!
                 command.ExecuteNonQuery();
@@ -81,15 +82,15 @@ namespace Artigo
 
             var conn = Login.ConnectOpen;
             //Buscar usuário selecionado
-            string sql = "Select * from Artigo where id = '" + listarArtigos.artigoSelecionado + "'";
+            string sql = "Select * from Artigo where idartigo = '" + listarArtigos.artigoSelecionado + "'";
             DataTable dt = new DataTable();
             SqlDataAdapter da = new SqlDataAdapter(sql, conn);
             da.Fill(dt);
 
-            artigo_Titulo.Text = Convert.ToString(dt.Rows[0][2]);
-            artigo_Conteudo.Text = Convert.ToString(dt.Rows[0][3]);
+            artigo_Titulo.Text = Convert.ToString(dt.Rows[0][1]);
+            artigo_Conteudo.Text = Convert.ToString(dt.Rows[0][2]);
 
-            id = Convert.ToInt16(listarArtigos.artigoSelecionado);
+            idartigo = Convert.ToInt16(listarArtigos.artigoSelecionado);
 
             btn_Aprovar.Visible = true;
             btn_Justificar.Visible = true;
@@ -106,10 +107,10 @@ namespace Artigo
         private void btn_Aprovar_Click(object sender, EventArgs e)
         {
                 StringBuilder sql = new StringBuilder();
-                sql.Append("Insert into Revisao(nome_revisor, status, datahora_avaliacao,id_artigo)");
-                sql.Append("Values (@nome_revisor, @status, @datahora_avaliacao,@id_artigo)");
+                sql.Append("Insert into Revisao(status, datahora_avaliacao,id_artigo,id_usuario)");
+                sql.Append("Values (@status, @datahora_avaliacao,@id_artigo,@id_usuario)");
 
-                string nome_revisor = Login.nomeUser;
+                int id_usuario = Login.idusuario;
                 string status = "Aprovado";
                 DataLogin ds = new DataLogin();
                 string datahora_aprovacao = ds.retornarData();
@@ -118,13 +119,13 @@ namespace Artigo
                 try
                 {
                     command = new SqlCommand(sql.ToString(), ConnectOpen);
-                    command.Parameters.Add(new SqlParameter("@nome_revisor", nome_revisor));
                     command.Parameters.Add(new SqlParameter("@status", status));
                     command.Parameters.Add(new SqlParameter("@datahora_avaliacao", datahora_aprovacao));
-                    command.Parameters.Add(new SqlParameter("@id_artigo", id));
+                    command.Parameters.Add(new SqlParameter("@id_artigo", idartigo));
+                     command.Parameters.Add(new SqlParameter("@id_usuario", id_usuario));
 
-                    //utilizado para executar o comando SQL, se não tiver esse comando não insere nada no banco!
-                    command.ExecuteNonQuery();
+                //utilizado para executar o comando SQL, se não tiver esse comando não insere nada no banco!
+                command.ExecuteNonQuery();
                     MessageBox.Show("Aprovação realizada com sucesso!");
                     Hide();
                 }
