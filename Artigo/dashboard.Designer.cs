@@ -40,15 +40,19 @@
             this.btn_areaInteresse = new System.Windows.Forms.Button();
             this.btn_endiados = new System.Windows.Forms.Button();
             this.btn_cadastro_user = new System.Windows.Forms.Button();
+            this.btn_revisar = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btn_Artigos
             // 
-            this.btn_Artigos.Location = new System.Drawing.Point(162, 132);
+            this.btn_Artigos.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Artigos.Location = new System.Drawing.Point(120, 129);
             this.btn_Artigos.Name = "btn_Artigos";
-            this.btn_Artigos.Size = new System.Drawing.Size(146, 160);
+            this.btn_Artigos.Size = new System.Drawing.Size(99, 136);
             this.btn_Artigos.TabIndex = 1;
-            this.btn_Artigos.Text = "Artigos";
+            this.btn_Artigos.Text = "Criar artigos";
+            this.btn_Artigos.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btn_Artigos.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btn_Artigos.UseVisualStyleBackColor = true;
             this.btn_Artigos.Click += new System.EventHandler(this.btn_Artigos_Click);
             // 
@@ -121,41 +125,52 @@
             // 
             // btn_Status
             // 
-            this.btn_Status.Location = new System.Drawing.Point(314, 133);
+            this.btn_Status.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Status.Location = new System.Drawing.Point(236, 129);
             this.btn_Status.Name = "btn_Status";
-            this.btn_Status.Size = new System.Drawing.Size(146, 160);
+            this.btn_Status.Size = new System.Drawing.Size(99, 136);
             this.btn_Status.TabIndex = 10;
             this.btn_Status.Text = "Status aprovação";
+            this.btn_Status.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btn_Status.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btn_Status.UseVisualStyleBackColor = true;
             this.btn_Status.Click += new System.EventHandler(this.btn_Status_Click);
             // 
             // btn_areaInteresse
             // 
-            this.btn_areaInteresse.Location = new System.Drawing.Point(16, 311);
+            this.btn_areaInteresse.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_areaInteresse.Location = new System.Drawing.Point(12, 285);
             this.btn_areaInteresse.Name = "btn_areaInteresse";
-            this.btn_areaInteresse.Size = new System.Drawing.Size(146, 160);
+            this.btn_areaInteresse.Size = new System.Drawing.Size(99, 136);
             this.btn_areaInteresse.TabIndex = 11;
-            this.btn_areaInteresse.Text = "Area de interesse";
+            this.btn_areaInteresse.Text = "Área de interesse";
+            this.btn_areaInteresse.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btn_areaInteresse.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btn_areaInteresse.UseVisualStyleBackColor = true;
             this.btn_areaInteresse.Visible = false;
             this.btn_areaInteresse.Click += new System.EventHandler(this.btn_areaInteresse_Click);
             // 
             // btn_endiados
             // 
-            this.btn_endiados.Location = new System.Drawing.Point(466, 133);
+            this.btn_endiados.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_endiados.Location = new System.Drawing.Point(353, 129);
             this.btn_endiados.Name = "btn_endiados";
-            this.btn_endiados.Size = new System.Drawing.Size(146, 160);
+            this.btn_endiados.Size = new System.Drawing.Size(99, 136);
             this.btn_endiados.TabIndex = 12;
             this.btn_endiados.Text = "Enviados";
+            this.btn_endiados.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btn_endiados.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btn_endiados.UseVisualStyleBackColor = true;
             this.btn_endiados.Click += new System.EventHandler(this.btn_endiados_Click);
             // 
             // btn_cadastro_user
             // 
+            this.btn_cadastro_user.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_cadastro_user.Image = global::Artigo.Properties.Resources.user_img;
-            this.btn_cadastro_user.Location = new System.Drawing.Point(16, 132);
+            this.btn_cadastro_user.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btn_cadastro_user.Location = new System.Drawing.Point(12, 128);
             this.btn_cadastro_user.Name = "btn_cadastro_user";
-            this.btn_cadastro_user.Size = new System.Drawing.Size(140, 161);
+            this.btn_cadastro_user.Size = new System.Drawing.Size(99, 137);
             this.btn_cadastro_user.TabIndex = 0;
             this.btn_cadastro_user.Text = "Cadastrar Usuário";
             this.btn_cadastro_user.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -163,11 +178,26 @@
             this.btn_cadastro_user.Visible = false;
             this.btn_cadastro_user.Click += new System.EventHandler(this.btn_cadastro);
             // 
+            // btn_revisar
+            // 
+            this.btn_revisar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_revisar.Location = new System.Drawing.Point(472, 129);
+            this.btn_revisar.Name = "btn_revisar";
+            this.btn_revisar.Size = new System.Drawing.Size(99, 136);
+            this.btn_revisar.TabIndex = 13;
+            this.btn_revisar.Text = "Revisar artigos";
+            this.btn_revisar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btn_revisar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btn_revisar.UseVisualStyleBackColor = true;
+            this.btn_revisar.Visible = false;
+            this.btn_revisar.Click += new System.EventHandler(this.btn_revisarArtigo);
+            // 
             // Dashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1187, 661);
+            this.Controls.Add(this.btn_revisar);
             this.Controls.Add(this.btn_endiados);
             this.Controls.Add(this.btn_areaInteresse);
             this.Controls.Add(this.btn_Status);
@@ -203,6 +233,7 @@
         private System.Windows.Forms.Button btn_Status;
         private System.Windows.Forms.Button btn_areaInteresse;
         private System.Windows.Forms.Button btn_endiados;
+        private System.Windows.Forms.Button btn_revisar;
     }
 }
 

@@ -14,6 +14,7 @@ namespace Artigo
     public partial class Dashboard : Form
     {
         private int logado = 0;
+        public static int criarArtigo = 0;
 
         public Dashboard()
         {
@@ -35,6 +36,8 @@ namespace Artigo
             else if(Login.perfilUser == 2)
             {
                 label_tipoUser.Text = "Revisor";
+                btn_revisar.Visible = true;
+
             }else if(Login.perfilUser == 1)
             {
                 label_tipoUser.Text = "Autor";
@@ -45,6 +48,7 @@ namespace Artigo
             if(Login.perfilUser == 3)
             {
                 btn_areaInteresse.Visible = true;
+                btn_revisar.Visible = true;
             }
         }
        private void btn_cadastro(object sender, EventArgs e)
@@ -71,8 +75,10 @@ namespace Artigo
 
         private void btn_Artigos_Click(object sender, EventArgs e)
         {
+            criarArtigo++;
             Artigo artigo = new Artigo();
             artigo.ShowDialog();
+            
         }
 
         private void btn_Status_Click(object sender, EventArgs e)
@@ -92,5 +98,19 @@ namespace Artigo
             var enviados = new Enviados();
             enviados.ShowDialog();
         }
+
+        private void btn_revisarArtigo(object sender, EventArgs e)
+        {
+            var artigos = new Artigo();
+            artigos.ShowDialog();
+        }
+
+        public int buttonListarArtigo(int criarArtigo)
+        {
+            Dashboard.criarArtigo = criarArtigo;
+            return Dashboard.criarArtigo;
+        }
     }
+
+
 }
