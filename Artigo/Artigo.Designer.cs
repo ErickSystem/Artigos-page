@@ -38,6 +38,7 @@
             this.btn_Deletar = new System.Windows.Forms.Button();
             this.btn_Justificar = new System.Windows.Forms.Button();
             this.btn_listarArtigo = new System.Windows.Forms.Button();
+            this.cmb_areaInter = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // artigo_Titulo
@@ -116,6 +117,7 @@
             this.btn_Deletar.Text = "Deletar";
             this.btn_Deletar.UseVisualStyleBackColor = true;
             this.btn_Deletar.Visible = false;
+            this.btn_Deletar.Click += new System.EventHandler(this.btn_Deletar_Click);
             // 
             // btn_Justificar
             // 
@@ -139,11 +141,21 @@
             this.btn_listarArtigo.Visible = false;
             this.btn_listarArtigo.Click += new System.EventHandler(this.btn_listarArtigo_Click);
             // 
+            // cmb_areaInter
+            // 
+            this.cmb_areaInter.FormattingEnabled = true;
+            this.cmb_areaInter.Location = new System.Drawing.Point(351, 41);
+            this.cmb_areaInter.Name = "cmb_areaInter";
+            this.cmb_areaInter.Size = new System.Drawing.Size(121, 21);
+            this.cmb_areaInter.TabIndex = 11;
+            this.cmb_areaInter.MouseClick += new System.Windows.Forms.MouseEventHandler(this.cmb_areaInteresse);
+            // 
             // Artigo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1187, 686);
+            this.Controls.Add(this.cmb_areaInter);
             this.Controls.Add(this.btn_listarArtigo);
             this.Controls.Add(this.btn_Justificar);
             this.Controls.Add(this.btn_Deletar);
@@ -175,5 +187,6 @@
         private System.Windows.Forms.Button btn_Deletar;
         private System.Windows.Forms.Button btn_Justificar;
         private System.Windows.Forms.Button btn_listarArtigo;
+        private System.Windows.Forms.ComboBox cmb_areaInter;
     }
 }
