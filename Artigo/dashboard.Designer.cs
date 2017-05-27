@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.btn_cadastro_user = new System.Windows.Forms.Button();
             this.btn_Artigos = new System.Windows.Forms.Button();
             this.label_user = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -37,20 +36,11 @@
             this.btn_sair = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.label_tipoUser = new System.Windows.Forms.Label();
+            this.btn_Status = new System.Windows.Forms.Button();
+            this.btn_areaInteresse = new System.Windows.Forms.Button();
+            this.btn_endiados = new System.Windows.Forms.Button();
+            this.btn_cadastro_user = new System.Windows.Forms.Button();
             this.SuspendLayout();
-            // 
-            // btn_cadastro_user
-            // 
-            this.btn_cadastro_user.Image = global::Artigo.Properties.Resources.user_img;
-            this.btn_cadastro_user.Location = new System.Drawing.Point(16, 132);
-            this.btn_cadastro_user.Name = "btn_cadastro_user";
-            this.btn_cadastro_user.Size = new System.Drawing.Size(140, 161);
-            this.btn_cadastro_user.TabIndex = 0;
-            this.btn_cadastro_user.Text = "Cadastrar Usuário";
-            this.btn_cadastro_user.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btn_cadastro_user.UseVisualStyleBackColor = true;
-            this.btn_cadastro_user.Visible = false;
-            this.btn_cadastro_user.Click += new System.EventHandler(this.btn_cadastro);
             // 
             // btn_Artigos
             // 
@@ -60,6 +50,7 @@
             this.btn_Artigos.TabIndex = 1;
             this.btn_Artigos.Text = "Artigos";
             this.btn_Artigos.UseVisualStyleBackColor = true;
+            this.btn_Artigos.Click += new System.EventHandler(this.btn_Artigos_Click);
             // 
             // label_user
             // 
@@ -101,7 +92,7 @@
             // 
             // btn_sair
             // 
-            this.btn_sair.Location = new System.Drawing.Point(683, 13);
+            this.btn_sair.Location = new System.Drawing.Point(1100, 9);
             this.btn_sair.Name = "btn_sair";
             this.btn_sair.Size = new System.Drawing.Size(75, 23);
             this.btn_sair.TabIndex = 7;
@@ -128,11 +119,58 @@
             this.label_tipoUser.Size = new System.Drawing.Size(0, 24);
             this.label_tipoUser.TabIndex = 8;
             // 
+            // btn_Status
+            // 
+            this.btn_Status.Location = new System.Drawing.Point(314, 133);
+            this.btn_Status.Name = "btn_Status";
+            this.btn_Status.Size = new System.Drawing.Size(146, 160);
+            this.btn_Status.TabIndex = 10;
+            this.btn_Status.Text = "Status aprovação";
+            this.btn_Status.UseVisualStyleBackColor = true;
+            this.btn_Status.Click += new System.EventHandler(this.btn_Status_Click);
+            // 
+            // btn_areaInteresse
+            // 
+            this.btn_areaInteresse.Location = new System.Drawing.Point(16, 311);
+            this.btn_areaInteresse.Name = "btn_areaInteresse";
+            this.btn_areaInteresse.Size = new System.Drawing.Size(146, 160);
+            this.btn_areaInteresse.TabIndex = 11;
+            this.btn_areaInteresse.Text = "Area de interesse";
+            this.btn_areaInteresse.UseVisualStyleBackColor = true;
+            this.btn_areaInteresse.Visible = false;
+            this.btn_areaInteresse.Click += new System.EventHandler(this.btn_areaInteresse_Click);
+            // 
+            // btn_endiados
+            // 
+            this.btn_endiados.Location = new System.Drawing.Point(466, 133);
+            this.btn_endiados.Name = "btn_endiados";
+            this.btn_endiados.Size = new System.Drawing.Size(146, 160);
+            this.btn_endiados.TabIndex = 12;
+            this.btn_endiados.Text = "Enviados";
+            this.btn_endiados.UseVisualStyleBackColor = true;
+            this.btn_endiados.Click += new System.EventHandler(this.btn_endiados_Click);
+            // 
+            // btn_cadastro_user
+            // 
+            this.btn_cadastro_user.Image = global::Artigo.Properties.Resources.user_img;
+            this.btn_cadastro_user.Location = new System.Drawing.Point(16, 132);
+            this.btn_cadastro_user.Name = "btn_cadastro_user";
+            this.btn_cadastro_user.Size = new System.Drawing.Size(140, 161);
+            this.btn_cadastro_user.TabIndex = 0;
+            this.btn_cadastro_user.Text = "Cadastrar Usuário";
+            this.btn_cadastro_user.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btn_cadastro_user.UseVisualStyleBackColor = true;
+            this.btn_cadastro_user.Visible = false;
+            this.btn_cadastro_user.Click += new System.EventHandler(this.btn_cadastro);
+            // 
             // Dashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(784, 661);
+            this.ClientSize = new System.Drawing.Size(1187, 661);
+            this.Controls.Add(this.btn_endiados);
+            this.Controls.Add(this.btn_areaInteresse);
+            this.Controls.Add(this.btn_Status);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label_tipoUser);
             this.Controls.Add(this.btn_sair);
@@ -162,6 +200,9 @@
         private System.Windows.Forms.Button btn_sair;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label_tipoUser;
+        private System.Windows.Forms.Button btn_Status;
+        private System.Windows.Forms.Button btn_areaInteresse;
+        private System.Windows.Forms.Button btn_endiados;
     }
 }
 

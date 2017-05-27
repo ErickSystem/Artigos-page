@@ -8,9 +8,12 @@ namespace Artigo
 {
     public class DataLogin
     {
-        public string dia;
-        public string mes;
-        public string ano;
+        private string dia;
+        private string mes;
+        private string ano;
+        private string hora;
+        private string minuto;
+
 
         string data;
         public string retornarData()
@@ -20,9 +23,12 @@ namespace Artigo
              ano = DateTime.Now.Year.ToString();
             //passa a data para o Label e apresenta na tela
 
-            return data = "0" + dia + "/" + "0" + mes + "/" + ano;
+            hora = DateTime.Now.Hour.ToString();
+            minuto = DateTime.Now.Minute.ToString();
+            return data = dia + "/" + "0" + mes + "/" + ano + " " + hora + ":" + minuto;
+
         }
         //recebe a data atual
-
+       
     }
 }

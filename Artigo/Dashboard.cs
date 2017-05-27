@@ -13,6 +13,8 @@ namespace Artigo
 {
     public partial class Dashboard : Form
     {
+        private int logado = 0;
+
         public Dashboard()
         {
             InitializeComponent();
@@ -20,14 +22,10 @@ namespace Artigo
 
         private void dashboard_Load(object sender, EventArgs e)
         {
-
             //mostrar a data que o usuario está logado
             DataLogin data = new DataLogin();
             label_data.Text = data.retornarData();
-
-
             label_user.Text = Login.nomeUser;
-
              //Mostrar na tela qual tipo de usuário está logado
             if (Login.perfilUser == 3)
             {
@@ -44,20 +42,55 @@ namespace Artigo
             {
                 label_tipoUser.Text = "sem permissões";
             }
+            if(Login.perfilUser == 3)
+            {
+                btn_areaInteresse.Visible = true;
+            }
         }
-
        private void btn_cadastro(object sender, EventArgs e)
         {
             Cadastrar frms = new Cadastrar();
             frms.ShowDialog();
         }
-
         private void btn_sair_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            Login login = new Login();
-            login.ShowDialog();
-            
+            //Gera uma caixa de alerta solicitando confirmação para excluir usuário.
+            DialogResult resposta = MessageBox.Show("Deseja mesmo sair?", "Deslogar", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (resposta == DialogResult.Yes)
+            {
+                this.Hide();
+                Login login = new Login();
+                login.ShowDialog();
+            }
+        }
+        public int deslogar(int logado)
+        {   
+            this.logado = logado;
+            return logado;
+        }
+
+        private void btn_Artigos_Click(object sender, EventArgs e)
+        {
+            Artigo artigo = new Artigo();
+            artigo.ShowDialog();
+        }
+
+        private void btn_Status_Click(object sender, EventArgs e)
+        {
+            Status_artigos sa = new Status_artigos();
+            sa.ShowDialog();
+        }
+
+        private void btn_areaInteresse_Click(object sender, EventArgs e)
+        {
+            var area = new AreaInteresse();
+            area.ShowDialog();
+        }
+
+        private void btn_endiados_Click(object sender, EventArgs e)
+        {
+            var enviados = new Enviados();
+            enviados.ShowDialog();
         }
     }
 }

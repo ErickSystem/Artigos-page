@@ -19,6 +19,7 @@ namespace Artigo
         public char PasswordChar { get; set; }
         public static int perfilUser;
         public static string nomeUser;
+        public static int idusuario;
 
         public Login()
         {
@@ -34,7 +35,7 @@ namespace Artigo
 
         private void btn_login_Click(object sender, EventArgs e)
         {
-          
+            
             string SqlCommand = "Select * from Usuarios where login = '"+textUsuario.Text +"'and senha = '" + textSenha.Text+"'";
             DataTable dt = new DataTable();
             SqlDataAdapter da = new SqlDataAdapter(SqlCommand, ConnectOpen);// Adapta os dados para linguagem SQL
@@ -45,8 +46,10 @@ namespace Artigo
                                  */
 
             {
+
                 this.Hide();
                 logado = true;
+                idusuario = Convert.ToInt16(dt.Rows[0][0]);
                 perfilUser = Convert.ToInt16(dt.Rows[0][4]);
                 nomeUser = Convert.ToString(dt.Rows[0][1]);
                 var frm = new Dashboard();

@@ -15,7 +15,8 @@ namespace Artigo
     { 
         private Conexao con = null;// abrir o banco
         public SqlConnection ConnectOpen = null; //Abrir a conexão
-        private int perfilUser=0;
+
+        private int perfilUser=1;
         private int id;
 
         public Cadastrar()
@@ -33,6 +34,17 @@ namespace Artigo
                 btn_Cadastrar.Visible = true;
                 label_perfil.Visible = true;
                 cmdPerfil.Visible = true;
+
+              /*  Dashboard dash = new Dashboard();
+                int logado = 0;
+                logado = dash.deslogar(logado);
+                //se o buttun "Sair" criado em Dashboard retornar FALSE (retorno do metodo deslogar()), então os buttuns abaixo serão desabilitados.
+                if (logado == 1)
+                {
+                    btn_Listar.Visible = false;
+                    label_perfil.Visible = false;
+                    cmdPerfil.Visible = false;
+                }*/
             }
         }
         
@@ -66,6 +78,9 @@ namespace Artigo
                             break;
                         case "Gerente":
                             perfilUser = 3;
+                            break;
+                        case "Selecionar":
+                            perfilUser = 4;
                             break;
                     }
                 SqlCommand command = null;
@@ -103,7 +118,7 @@ namespace Artigo
 
             var conn = Login.ConnectOpen;
             //Buscar usuário selecionado
-            string sql = "Select * from Usuarios where id = '" + listuser.usuarioSelecionado + "'";
+            string sql = "Select * from Usuarios where idusuario = '" + listuser.usuarioSelecionado + "'";
             DataTable dt = new DataTable();
             SqlDataAdapter da = new SqlDataAdapter(sql, conn);
             da.Fill(dt);
@@ -154,12 +169,12 @@ namespace Artigo
             //Verifica se foi selecionado o usuário no "LOAD"
             if(id > 0)
             {
-                string sql = "UPDATE Usuarios SET nome = @nome, login = @login, senha = @senha, perfil = @perfil WHERE id = @id";
+                string sql = "UPDATE Usuarios SET nome = @nome, login = @login, senha = @senha, perfil = @perfil WHERE idusuario = @idusuario";
                 SqlCommand command = null;
                 try
                 {
                     command = new SqlCommand(sql, ConnectOpen);
-                    command.Parameters.Add(new SqlParameter("@id", id));
+                    command.Parameters.Add(new SqlParameter("@idusuario", id));
                     command.Parameters.Add(new SqlParameter("@nome", text_nome.Text));
                     command.Parameters.Add(new SqlParameter("@login", textUsuario.Text));
                     command.Parameters.Add(new SqlParameter("@senha", textSenha.Text));
@@ -230,12 +245,12 @@ namespace Artigo
             {
                 if (id > 0 && Login.perfilUser == 3)
                 {
-                    string sql = "DELETE FROM Usuarios WHERE id = @id";
+                    string sql = "DELETE FROM Usuarios WHERE idusuario = @idusuario";
                     SqlCommand command = null;
                     try
                     {
                         command = new SqlCommand(sql, ConnectOpen);
-                        command.Parameters.Add(new SqlParameter("@id", id));
+                        command.Parameters.Add(new SqlParameter("@idusuario", id));
 
                         //utilizado para executar o comando SQL, se não tiver esse comando não insere nada no banco!
                         command.ExecuteNonQuery();
@@ -251,6 +266,11 @@ namespace Artigo
                     }
                 }//if de confirmação de permissão e retorno do ID
             }//id de resposta
+        }
+
+        private void cmdPerfil_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -30,12 +30,6 @@ namespace Artigo
             Hide();
             
         }
-
-        private void data_Grid_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
         private void ListarUsuario_Load(object sender, EventArgs e)
         {
             var conn = Login.ConnectOpen;

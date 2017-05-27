@@ -37,16 +37,15 @@
             // data_Grid
             // 
             this.data_Grid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.data_Grid.Location = new System.Drawing.Point(13, 162);
+            this.data_Grid.Location = new System.Drawing.Point(340, 229);
             this.data_Grid.Name = "data_Grid";
             this.data_Grid.Size = new System.Drawing.Size(608, 327);
             this.data_Grid.TabIndex = 0;
-            this.data_Grid.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.data_Grid_CellContentClick);
             this.data_Grid.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.data_Grid_CellContentDoubleClick);
             // 
             // text_consulta
             // 
-            this.text_consulta.Location = new System.Drawing.Point(13, 113);
+            this.text_consulta.Location = new System.Drawing.Point(340, 180);
             this.text_consulta.Name = "text_consulta";
             this.text_consulta.Size = new System.Drawing.Size(608, 20);
             this.text_consulta.TabIndex = 1;
@@ -54,7 +53,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 80);
+            this.label1.Location = new System.Drawing.Point(339, 147);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(88, 13);
             this.label1.TabIndex = 2;
@@ -64,7 +63,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(633, 519);
+            this.ClientSize = new System.Drawing.Size(1194, 636);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.text_consulta);
             this.Controls.Add(this.data_Grid);
