@@ -43,13 +43,16 @@
             // 
             // artigo_Titulo
             // 
-            this.artigo_Titulo.Location = new System.Drawing.Point(23, 41);
+            this.artigo_Titulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.artigo_Titulo.Location = new System.Drawing.Point(23, 45);
+            this.artigo_Titulo.Multiline = true;
             this.artigo_Titulo.Name = "artigo_Titulo";
-            this.artigo_Titulo.Size = new System.Drawing.Size(322, 20);
+            this.artigo_Titulo.Size = new System.Drawing.Size(322, 32);
             this.artigo_Titulo.TabIndex = 0;
             // 
             // artigo_Conteudo
             // 
+            this.artigo_Conteudo.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.artigo_Conteudo.Location = new System.Drawing.Point(23, 93);
             this.artigo_Conteudo.Multiline = true;
             this.artigo_Conteudo.Name = "artigo_Conteudo";
@@ -59,18 +62,21 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Monotype Corsiva", 20.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(19, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(56, 24);
+            this.label1.Size = new System.Drawing.Size(80, 33);
             this.label1.TabIndex = 2;
             this.label1.Text = "Titulo";
             // 
             // btn_Submeter
             // 
-            this.btn_Submeter.Location = new System.Drawing.Point(1019, 633);
+            this.btn_Submeter.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Submeter.Location = new System.Drawing.Point(1055, 629);
             this.btn_Submeter.Name = "btn_Submeter";
-            this.btn_Submeter.Size = new System.Drawing.Size(158, 41);
+            this.btn_Submeter.Size = new System.Drawing.Size(120, 45);
             this.btn_Submeter.TabIndex = 4;
             this.btn_Submeter.Text = "Submeter";
             this.btn_Submeter.UseVisualStyleBackColor = true;
@@ -78,9 +84,10 @@
             // 
             // btn_Cancelar
             // 
-            this.btn_Cancelar.Location = new System.Drawing.Point(855, 633);
+            this.btn_Cancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Cancelar.Location = new System.Drawing.Point(929, 629);
             this.btn_Cancelar.Name = "btn_Cancelar";
-            this.btn_Cancelar.Size = new System.Drawing.Size(158, 41);
+            this.btn_Cancelar.Size = new System.Drawing.Size(120, 45);
             this.btn_Cancelar.TabIndex = 5;
             this.btn_Cancelar.Text = "Cancelar";
             this.btn_Cancelar.UseVisualStyleBackColor = true;
@@ -88,9 +95,10 @@
             // 
             // btn_Aprovar
             // 
-            this.btn_Aprovar.Location = new System.Drawing.Point(1090, 12);
+            this.btn_Aprovar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Aprovar.Location = new System.Drawing.Point(1055, 12);
             this.btn_Aprovar.Name = "btn_Aprovar";
-            this.btn_Aprovar.Size = new System.Drawing.Size(75, 23);
+            this.btn_Aprovar.Size = new System.Drawing.Size(120, 45);
             this.btn_Aprovar.TabIndex = 6;
             this.btn_Aprovar.Text = "Aprovar";
             this.btn_Aprovar.UseVisualStyleBackColor = true;
@@ -99,9 +107,10 @@
             // 
             // btn_Reprovar
             // 
-            this.btn_Reprovar.Location = new System.Drawing.Point(1009, 12);
+            this.btn_Reprovar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Reprovar.Location = new System.Drawing.Point(929, 12);
             this.btn_Reprovar.Name = "btn_Reprovar";
-            this.btn_Reprovar.Size = new System.Drawing.Size(75, 23);
+            this.btn_Reprovar.Size = new System.Drawing.Size(120, 45);
             this.btn_Reprovar.TabIndex = 7;
             this.btn_Reprovar.Text = "Reprovar";
             this.btn_Reprovar.UseVisualStyleBackColor = true;
@@ -110,9 +119,10 @@
             // 
             // btn_Deletar
             // 
-            this.btn_Deletar.Location = new System.Drawing.Point(928, 12);
+            this.btn_Deletar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Deletar.Location = new System.Drawing.Point(803, 12);
             this.btn_Deletar.Name = "btn_Deletar";
-            this.btn_Deletar.Size = new System.Drawing.Size(75, 23);
+            this.btn_Deletar.Size = new System.Drawing.Size(120, 45);
             this.btn_Deletar.TabIndex = 8;
             this.btn_Deletar.Text = "Deletar";
             this.btn_Deletar.UseVisualStyleBackColor = true;
@@ -121,9 +131,10 @@
             // 
             // btn_Justificar
             // 
-            this.btn_Justificar.Location = new System.Drawing.Point(847, 12);
+            this.btn_Justificar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Justificar.Location = new System.Drawing.Point(677, 12);
             this.btn_Justificar.Name = "btn_Justificar";
-            this.btn_Justificar.Size = new System.Drawing.Size(75, 23);
+            this.btn_Justificar.Size = new System.Drawing.Size(120, 45);
             this.btn_Justificar.TabIndex = 9;
             this.btn_Justificar.Text = "Não rever";
             this.btn_Justificar.UseVisualStyleBackColor = true;
@@ -132,9 +143,10 @@
             // 
             // btn_listarArtigo
             // 
-            this.btn_listarArtigo.Location = new System.Drawing.Point(691, 633);
+            this.btn_listarArtigo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_listarArtigo.Location = new System.Drawing.Point(803, 629);
             this.btn_listarArtigo.Name = "btn_listarArtigo";
-            this.btn_listarArtigo.Size = new System.Drawing.Size(158, 41);
+            this.btn_listarArtigo.Size = new System.Drawing.Size(120, 45);
             this.btn_listarArtigo.TabIndex = 10;
             this.btn_listarArtigo.Text = "Listar artigos";
             this.btn_listarArtigo.UseVisualStyleBackColor = true;
@@ -143,17 +155,19 @@
             // 
             // cmb_areaInter
             // 
-            this.cmb_areaInter.FormattingEnabled = true;
-            this.cmb_areaInter.Location = new System.Drawing.Point(351, 41);
+            this.cmb_areaInter.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmb_areaInter.Location = new System.Drawing.Point(351, 45);
             this.cmb_areaInter.Name = "cmb_areaInter";
-            this.cmb_areaInter.Size = new System.Drawing.Size(121, 21);
-            this.cmb_areaInter.TabIndex = 11;
-            this.cmb_areaInter.MouseClick += new System.Windows.Forms.MouseEventHandler(this.cmb_areaInteresse);
+            this.cmb_areaInter.Size = new System.Drawing.Size(179, 32);
+            this.cmb_areaInter.TabIndex = 0;
+            this.cmb_areaInter.MouseClick += new System.Windows.Forms.MouseEventHandler(this.cmd_AreaInteresse);
             // 
             // Artigo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = global::Artigo.Properties.Resources.books2;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1187, 686);
             this.Controls.Add(this.cmb_areaInter);
             this.Controls.Add(this.btn_listarArtigo);

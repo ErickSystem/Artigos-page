@@ -187,6 +187,17 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <DependentUpon>DbArtigos.mdf</DependentUpon>
     </Content>
+    <None Include="Resources\library-books.jpg" />
+    <None Include="Resources\Green.png" />
+    <None Include="Resources\vanban02.png" />
+    <None Include="Resources\lupa1.jpg" />
+    <None Include="Resources\homework_icon.jpg" />
+    <None Include="Resources\article144.jpg" />
+    <None Include="Resources\library2.jpg" />
+    <None Include="Resources\library1.jpg" />
+    <None Include="Resources\books3.jpg" />
+    <None Include="Resources\books2.jpg" />
+    <None Include="Resources\books1.jpg" />
     <None Include="Resources\user_img.png" />
   </ItemGroup>
   <ItemGroup>

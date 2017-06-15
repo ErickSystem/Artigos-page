@@ -45,60 +45,73 @@
             // 
             // btn_Artigos
             // 
+            this.btn_Artigos.BackColor = System.Drawing.Color.Transparent;
+            this.btn_Artigos.BackgroundImage = global::Artigo.Properties.Resources.article144;
+            this.btn_Artigos.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btn_Artigos.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Artigos.Location = new System.Drawing.Point(120, 129);
+            this.btn_Artigos.ForeColor = System.Drawing.Color.Black;
+            this.btn_Artigos.Location = new System.Drawing.Point(138, 128);
             this.btn_Artigos.Name = "btn_Artigos";
-            this.btn_Artigos.Size = new System.Drawing.Size(99, 136);
+            this.btn_Artigos.Size = new System.Drawing.Size(120, 140);
             this.btn_Artigos.TabIndex = 1;
             this.btn_Artigos.Text = "Criar artigos";
             this.btn_Artigos.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btn_Artigos.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btn_Artigos.UseVisualStyleBackColor = true;
+            this.btn_Artigos.UseVisualStyleBackColor = false;
             this.btn_Artigos.Click += new System.EventHandler(this.btn_Artigos_Click);
             // 
             // label_user
             // 
             this.label_user.AutoSize = true;
-            this.label_user.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_user.BackColor = System.Drawing.Color.Transparent;
+            this.label_user.Font = new System.Drawing.Font("Monotype Corsiva", 20.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_user.ForeColor = System.Drawing.Color.White;
             this.label_user.Location = new System.Drawing.Point(183, 44);
             this.label_user.Name = "label_user";
-            this.label_user.Size = new System.Drawing.Size(0, 24);
+            this.label_user.Size = new System.Drawing.Size(0, 33);
             this.label_user.TabIndex = 2;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Monotype Corsiva", 20.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(12, 44);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(157, 24);
+            this.label1.Size = new System.Drawing.Size(183, 33);
             this.label1.TabIndex = 3;
             this.label1.Text = "Usuário logado:";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.BackColor = System.Drawing.Color.Transparent;
+            this.label3.Font = new System.Drawing.Font("Monotype Corsiva", 20.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.White;
             this.label3.Location = new System.Drawing.Point(12, 79);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(57, 24);
+            this.label3.Size = new System.Drawing.Size(77, 33);
             this.label3.TabIndex = 5;
             this.label3.Text = "Data:";
             // 
             // label_data
             // 
             this.label_data.AutoSize = true;
-            this.label_data.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_data.BackColor = System.Drawing.Color.Transparent;
+            this.label_data.Font = new System.Drawing.Font("Monotype Corsiva", 20.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_data.ForeColor = System.Drawing.Color.White;
             this.label_data.Location = new System.Drawing.Point(75, 79);
             this.label_data.Name = "label_data";
-            this.label_data.Size = new System.Drawing.Size(0, 24);
+            this.label_data.Size = new System.Drawing.Size(0, 33);
             this.label_data.TabIndex = 6;
             // 
             // btn_sair
             // 
+            this.btn_sair.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_sair.Location = new System.Drawing.Point(1100, 9);
             this.btn_sair.Name = "btn_sair";
-            this.btn_sair.Size = new System.Drawing.Size(75, 23);
+            this.btn_sair.Size = new System.Drawing.Size(75, 25);
             this.btn_sair.TabIndex = 7;
             this.btn_sair.Text = "Sair";
             this.btn_sair.UseVisualStyleBackColor = true;
@@ -107,28 +120,34 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Font = new System.Drawing.Font("Monotype Corsiva", 20.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.White;
             this.label2.Location = new System.Drawing.Point(12, 9);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(157, 24);
+            this.label2.Size = new System.Drawing.Size(177, 33);
             this.label2.TabIndex = 9;
             this.label2.Text = "Tipo de usuario";
             // 
             // label_tipoUser
             // 
             this.label_tipoUser.AutoSize = true;
-            this.label_tipoUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_tipoUser.BackColor = System.Drawing.Color.Transparent;
+            this.label_tipoUser.Font = new System.Drawing.Font("Monotype Corsiva", 20.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_tipoUser.ForeColor = System.Drawing.Color.White;
             this.label_tipoUser.Location = new System.Drawing.Point(183, 9);
             this.label_tipoUser.Name = "label_tipoUser";
-            this.label_tipoUser.Size = new System.Drawing.Size(0, 24);
+            this.label_tipoUser.Size = new System.Drawing.Size(0, 33);
             this.label_tipoUser.TabIndex = 8;
             // 
             // btn_Status
             // 
+            this.btn_Status.BackgroundImage = global::Artigo.Properties.Resources.homework_icon;
+            this.btn_Status.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btn_Status.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Status.Location = new System.Drawing.Point(236, 129);
+            this.btn_Status.Location = new System.Drawing.Point(264, 128);
             this.btn_Status.Name = "btn_Status";
-            this.btn_Status.Size = new System.Drawing.Size(99, 136);
+            this.btn_Status.Size = new System.Drawing.Size(120, 140);
             this.btn_Status.TabIndex = 10;
             this.btn_Status.Text = "Status aprovação";
             this.btn_Status.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -138,10 +157,12 @@
             // 
             // btn_areaInteresse
             // 
+            this.btn_areaInteresse.BackgroundImage = global::Artigo.Properties.Resources.Green;
+            this.btn_areaInteresse.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btn_areaInteresse.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_areaInteresse.Location = new System.Drawing.Point(12, 285);
+            this.btn_areaInteresse.Location = new System.Drawing.Point(264, 271);
             this.btn_areaInteresse.Name = "btn_areaInteresse";
-            this.btn_areaInteresse.Size = new System.Drawing.Size(99, 136);
+            this.btn_areaInteresse.Size = new System.Drawing.Size(120, 140);
             this.btn_areaInteresse.TabIndex = 11;
             this.btn_areaInteresse.Text = "Área de interesse";
             this.btn_areaInteresse.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -152,10 +173,12 @@
             // 
             // btn_endiados
             // 
+            this.btn_endiados.BackgroundImage = global::Artigo.Properties.Resources.vanban02;
+            this.btn_endiados.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btn_endiados.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_endiados.Location = new System.Drawing.Point(353, 129);
+            this.btn_endiados.Location = new System.Drawing.Point(12, 271);
             this.btn_endiados.Name = "btn_endiados";
-            this.btn_endiados.Size = new System.Drawing.Size(99, 136);
+            this.btn_endiados.Size = new System.Drawing.Size(120, 140);
             this.btn_endiados.TabIndex = 12;
             this.btn_endiados.Text = "Enviados";
             this.btn_endiados.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -170,7 +193,7 @@
             this.btn_cadastro_user.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btn_cadastro_user.Location = new System.Drawing.Point(12, 128);
             this.btn_cadastro_user.Name = "btn_cadastro_user";
-            this.btn_cadastro_user.Size = new System.Drawing.Size(99, 137);
+            this.btn_cadastro_user.Size = new System.Drawing.Size(120, 140);
             this.btn_cadastro_user.TabIndex = 0;
             this.btn_cadastro_user.Text = "Cadastrar Usuário";
             this.btn_cadastro_user.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -180,10 +203,13 @@
             // 
             // btn_revisar
             // 
+            this.btn_revisar.BackgroundImage = global::Artigo.Properties.Resources.lupa1;
+            this.btn_revisar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btn_revisar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_revisar.Location = new System.Drawing.Point(472, 129);
+            this.btn_revisar.ForeColor = System.Drawing.Color.Black;
+            this.btn_revisar.Location = new System.Drawing.Point(138, 271);
             this.btn_revisar.Name = "btn_revisar";
-            this.btn_revisar.Size = new System.Drawing.Size(99, 136);
+            this.btn_revisar.Size = new System.Drawing.Size(120, 140);
             this.btn_revisar.TabIndex = 13;
             this.btn_revisar.Text = "Revisar artigos";
             this.btn_revisar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -196,6 +222,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = global::Artigo.Properties.Resources.books2;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1187, 661);
             this.Controls.Add(this.btn_revisar);
             this.Controls.Add(this.btn_endiados);

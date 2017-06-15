@@ -16,6 +16,7 @@ namespace Artigo
 
         private Conexao con = null;// abrir o banco
         public SqlConnection ConnectOpen = null; //Abrir a conexão
+        private int codigoAreaClicado = 0;
 
         public AreaInteresse()
         {
@@ -24,25 +25,43 @@ namespace Artigo
             InitializeComponent();
         }
 
+        //Criando uma lista para usar na hora de editar user
+        public class Areas
+        {
+            public int codigo { get; set; }
+            public string area { get; set; }
+        }
+        public List<Areas> listAreas = new List<Areas>();
+
+
+        private void AreaInteresse_Load(object sender, EventArgs e)
+        {
+            CarregarDataGridView();
+        }
+
+        private void CarregarDataGridView()
+        {
+            //Ordenando na exibição dos dados na list por data
+            grid_Areas.DataSource = listAreas.OrderBy(x => x.codigo);
+        }
+
+
         private void btn_salvar_Click(object sender, EventArgs e)
         {
             StringBuilder sql = new StringBuilder();
-            sql.Append("Insert into Area_interesse_artigo(area, id_usuario)");
-            sql.Append("Values (@area, @id_usuario)");
-
-            int id_usuario = Login.idusuario;
+            sql.Append("Insert into Area_interesse_artigo(area)");
+            sql.Append("Values (@area)");
 
             SqlCommand command = null;
             try
             {
                 command = new SqlCommand(sql.ToString(), ConnectOpen);
                 command.Parameters.Add(new SqlParameter("@area", text_areaInteresse.Text));
-                command.Parameters.Add(new SqlParameter("@id_usuario", id_usuario));
 
                 //utilizado para executar o comando SQL, se não tiver esse comando não insere nada no banco!
                 command.ExecuteNonQuery();
                 MessageBox.Show("Salvo com sucesso!");
-                Hide();
+                LimparTela();
             }
             catch (Exception)
             {
@@ -54,6 +73,242 @@ namespace Artigo
         private void btn_cancelar_Click(object sender, EventArgs e)
         {
             Hide();
+        }
+
+        private void btn_ListarAreas_Click(object sender, EventArgs e)
+        {
+            var conn = Login.ConnectOpen;
+            //Buscar usuário selecionado
+            string sql = "Select idarea_interesse_artigo as Codigo, area as Area from Area_interesse_artigo";
+            DataTable dt = new DataTable();
+            SqlDataAdapter da = new SqlDataAdapter(sql, conn);
+            da.Fill(dt);
+
+            grid_Areas.DataSource = true;
+            grid_Areas.DataSource = dt;
+            grid_Areas.Refresh();
+        }
+
+        private void btn_VerRevisor(object sender, EventArgs e)
+        {
+
+            var conn = Login.ConnectOpen;
+            //Buscar usuário selecionado
+            string sql = "Select idusuario as Codigo,nome as Nome, areaInteresse as 'Area de Interesse' from Usuarios where perfil = 2";
+            DataTable dt = new DataTable();
+            SqlDataAdapter da = new SqlDataAdapter(sql, conn);
+            da.Fill(dt);
+
+            grid_Revisores.DataSource = true;
+            grid_Revisores.DataSource = dt;
+            grid_Revisores.Refresh();
+        }
+
+        private void btn_AssociarRevisor_Click(object sender, EventArgs e)
+        {
+
+                //Pegando o codigo digitado na interface e a area desejada a associar
+                int codrevisor = Convert.ToInt16(codigo_revisor.Value);
+                var conn = Login.ConnectOpen;
+                //Buscar codigo digitado
+                string sqlRevisor = "Select * from Usuarios where idusuario = '" + codrevisor + "' and perfil = 2";
+                DataTable dt = new DataTable();
+                SqlDataAdapter da = new SqlDataAdapter(sqlRevisor, conn);
+                da.Fill(dt);
+
+                if (dt.Rows.Count > 0)
+                {
+                    string sql = "UPDATE Usuarios SET areaInteresse = @areaInteresse WHERE idusuario = '" + codrevisor + "'";
+
+                    SqlCommand command = null;
+                    try
+                    {
+                        command = new SqlCommand(sql.ToString(), ConnectOpen);
+                        command.Parameters.Add(new SqlParameter("@areaInteresse", cmd_Areas.Text));
+
+                        //utilizado para executar o comando SQL, se não tiver esse comando não insere nada no banco!
+                        command.ExecuteNonQuery();
+                        MessageBox.Show("Associado com sucesso!");
+                        CarregarDataGridView();
+                        LimparTela();
+                    }
+                    catch (Exception)
+                    {
+                        MessageBox.Show("Erro ao associar revisor!");
+                        throw;
+                    }
+               
+                }
+                else
+                {
+                    MessageBox.Show("Codigo não encontrado");
+                }
+        }
+
+        private void cm_Areas(object sender, MouseEventArgs e)
+        {
+            var conn = Login.ConnectOpen;
+            //Buscar usuário selecionado
+            string sql = "Select * from Area_interesse_artigo";
+            SqlDataAdapter da = new SqlDataAdapter(sql, conn);
+            DataTable dtResultado = new DataTable();
+            dtResultado.Clear();//o ponto mais importante (limpa a table antes de preenche-la)
+            cmd_Areas.DataSource = null;
+            da.Fill(dtResultado);
+            cmd_Areas.DataSource = dtResultado;
+            // cmb_areaInter.ValueMember = "area";
+            cmd_Areas.DisplayMember = "area";
+            cmd_Areas.SelectedItem = "";
+            cmd_Areas.Refresh(); //faz uma nova busca no BD para preencher os valores da cb de departamentos.
+        }
+
+        public void LimparTela()
+        {
+            text_areaInteresse.Text = "";
+            codigo_revisor.Value = 0;
+            cmd_Areas.Text = "";
+        }
+
+        private void dtgrid_double(object sender, DataGridViewCellEventArgs e)
+        {
+
+            if (e.RowIndex < 0)
+                return;
+
+            int contCLick = 0;
+            contCLick++;
+
+            if (contCLick > 1)
+            {
+                listAreas.Clear();
+                LimparTela();
+            }
+            else
+            {
+                SqlDataReader rdr;
+                SqlCommand cmd;
+                var conn = Login.ConnectOpen;
+
+                cmd = new SqlCommand("Select * from Area_interesse_artigo", conn);
+                rdr = cmd.ExecuteReader();
+
+                //Utilizando para adicionar o resultado do select no objeto "AREA" depois add na listAreas
+
+                if(text_areaInteresse.Text != "")
+                {
+                    listAreas.Clear();
+                    while (rdr.Read())
+                    {
+                        var area = new Areas();
+                        area.area = rdr.GetValue(1).ToString();
+                        area.codigo = Convert.ToInt16(rdr.GetValue(0).ToString());
+                        listAreas.Add(area);
+                    }
+                }
+                else
+                {
+                    while (rdr.Read())
+                    {
+                        var area = new Areas();
+                        area.area = rdr.GetValue(1).ToString();
+                        area.codigo = Convert.ToInt16(rdr.GetValue(0).ToString());
+                        listAreas.Add(area);
+                    }
+                }
+                //Aqui é testado se a lista não está vazia, depois é apresentado na tela a area selecionada.
+                if (listAreas.Count > 0)
+                {
+
+                    int cod = Convert.ToInt16(grid_Areas.CurrentRow.Cells[0].Value);
+                    var areas = listAreas.SingleOrDefault(x => x.codigo == cod);
+                    text_areaInteresse.Text = areas.area;
+                    codigoAreaClicado = areas.codigo;
+                }
+                else
+                {
+                    MessageBox.Show("Lista vazia!");
+                }
+                rdr.Close();
+
+                btn_Alterar.Enabled = true;
+                btn_Excluir.Enabled = true;
+                btn_salvar.Visible = false;
+                btn_Criarnovo.Visible = true;
+            }
+        }
+
+        private void btn_Alterar_Click(object sender, EventArgs e)
+        {
+                btn_salvar.Visible = false;
+                btn_Criarnovo.Visible = true; 
+
+                string sql = "UPDATE Area_interesse_artigo SET area = @area WHERE idarea_interesse_artigo = '" + codigoAreaClicado + "'";
+
+                SqlCommand command = null;
+                try
+                {
+                    command = new SqlCommand(sql.ToString(), ConnectOpen);
+                    command.Parameters.Add(new SqlParameter("@area", text_areaInteresse.Text));
+
+                    //utilizado para executar o comando SQL, se não tiver esse comando não insere nada no banco!
+                    command.ExecuteNonQuery();
+                    MessageBox.Show("Alterado com sucesso!");
+                    listAreas.Clear();
+                    CarregarDataGridView();
+                    LimparTela();
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("Erro ao alterar area!");
+                    throw;
+                }
+
+            }
+
+        private void btn_Criarnovo_Click(object sender, EventArgs e)
+        {
+            listAreas.Clear();
+            CarregarDataGridView();
+            LimparTela();
+
+            btn_Alterar.Enabled = false;
+            btn_Excluir.Enabled = false;
+            btn_Criarnovo.Visible = false;
+            btn_salvar.Visible = true;
+        }
+
+        private void btn_Excluir_Click(object sender, EventArgs e)
+        {
+            //Gera uma caixa de alerta solicitando confirmação para excluir usuário.
+            DialogResult resposta = MessageBox.Show("Deseja mesmo deletar esta área?", "Deletar Área de interesse", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (resposta == DialogResult.Yes)
+            {
+                string sql = "DELETE FROM Area_interesse_artigo where idarea_interesse_artigo = '" + codigoAreaClicado + "'";
+
+                SqlCommand command = null;
+                try
+                {
+                    command = new SqlCommand(sql.ToString(), ConnectOpen);
+                    command.Parameters.Add(new SqlParameter("@idarea_interesse_artigo", codigoAreaClicado));
+
+                    //utilizado para executar o comando SQL, se não tiver esse comando não insere nada no banco!
+                    command.ExecuteNonQuery();
+                    MessageBox.Show("Exeluido com sucesso!");
+                    listAreas.Clear();
+                    CarregarDataGridView();
+                    LimparTela();
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("Erro ao Excluir área!");
+                    throw;
+                }
+
+                btn_Alterar.Enabled = false;
+                btn_Excluir.Enabled = false;
+                btn_Criarnovo.Visible = false;
+                btn_salvar.Visible = true;
+            }
         }
     }
 }

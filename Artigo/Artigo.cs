@@ -70,6 +70,7 @@ namespace Artigo
                 command.Parameters.Add(new SqlParameter("@titulo", artigo_Titulo.Text));
                 command.Parameters.Add(new SqlParameter("@conteudo", artigo_Conteudo.Text));
                 command.Parameters.Add(new SqlParameter("@datahora_submissao", datahora_submissao));
+                command.Parameters.Add(new SqlParameter("@id_usuario", id_usuario));
 
                 //utilizado para executar o comando SQL, se não tiver esse comando não insere nada no banco!
                 command.ExecuteNonQuery();
@@ -153,22 +154,6 @@ namespace Artigo
            
         }
 
-        private void cmb_areaInteresse(object sender, MouseEventArgs e)
-        {
-            ArrayList list = new ArrayList();
-
-            var conn = Login.ConnectOpen;
-            //Buscar usuário selecionado
-            string sql = "Select * from Area_interesse_artigo";
-            DataTable dt = new DataTable();
-            SqlDataAdapter da = new SqlDataAdapter(sql, conn);
-            da.Fill(dt);
-
-
-            cmb_areaInter.Text = Convert.ToString(dt.Rows[0][1]);
-
-        }
-
         private void btn_Deletar_Click(object sender, EventArgs e)
         {
             //Gera uma caixa de alerta solicitando confirmação para excluir usuário.
@@ -198,6 +183,27 @@ namespace Artigo
                     }
                 }//if de confirmação de permissão e retorno do ID
             }//id de resposta
+        }
+
+        //Utilizado para preencher com os dados da tabela: Area_interesse_artigo
+        private void cmd_AreaInteresse(object sender, MouseEventArgs e)
+        {
+            var conn = Login.ConnectOpen;
+            //Buscar usuário selecionado
+            string sql = "Select * from Area_interesse_artigo";
+            DataTable dt = new DataTable();
+            SqlDataAdapter da = new SqlDataAdapter(sql, conn);
+            //da.Fill(dt);
+
+            DataTable dtResultado = new DataTable();
+            dtResultado.Clear();//o ponto mais importante (limpa a table antes de preenche-la)
+            cmb_areaInter.DataSource = null;
+            da.Fill(dtResultado);
+            cmb_areaInter.DataSource = dtResultado;
+           // cmb_areaInter.ValueMember = "area";
+            cmb_areaInter.DisplayMember = "area";
+            cmb_areaInter.SelectedItem = "";
+            cmb_areaInter.Refresh(); //faz uma nova busca no BD para preencher os valores da cb de departamentos.
         }
     }
 }

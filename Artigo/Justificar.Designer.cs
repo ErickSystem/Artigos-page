@@ -35,9 +35,12 @@
             // 
             // btn_Salvar
             // 
-            this.btn_Salvar.Location = new System.Drawing.Point(510, 567);
+            this.btn_Salvar.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.btn_Salvar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Salvar.ForeColor = System.Drawing.Color.Black;
+            this.btn_Salvar.Location = new System.Drawing.Point(595, 567);
             this.btn_Salvar.Name = "btn_Salvar";
-            this.btn_Salvar.Size = new System.Drawing.Size(166, 48);
+            this.btn_Salvar.Size = new System.Drawing.Size(140, 45);
             this.btn_Salvar.TabIndex = 0;
             this.btn_Salvar.Text = "Salvar";
             this.btn_Salvar.UseVisualStyleBackColor = true;
@@ -45,30 +48,37 @@
             // 
             // text_Justificativa
             // 
-            this.text_Justificativa.Location = new System.Drawing.Point(371, 139);
+            this.text_Justificativa.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.text_Justificativa.Location = new System.Drawing.Point(433, 139);
             this.text_Justificativa.Multiline = true;
             this.text_Justificativa.Name = "text_Justificativa";
-            this.text_Justificativa.Size = new System.Drawing.Size(493, 412);
+            this.text_Justificativa.Size = new System.Drawing.Size(574, 412);
             this.text_Justificativa.TabIndex = 1;
             // 
             // label1
             // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(504, 90);
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Monotype Corsiva", 20.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(588, 90);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(215, 31);
+            this.label1.Size = new System.Drawing.Size(151, 33);
             this.label1.TabIndex = 2;
-            this.label1.Text = "JUSTIFICATIVA";
+            this.label1.Text = "Justificativa";
             // 
             // Justificar
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1183, 640);
+            this.BackgroundImage = global::Artigo.Properties.Resources.books3;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ClientSize = new System.Drawing.Size(1354, 640);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.text_Justificativa);
             this.Controls.Add(this.btn_Salvar);
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ForeColor = System.Drawing.Color.White;
             this.Name = "Justificar";
             this.Text = "Justificar";
             this.ResumeLayout(false);
