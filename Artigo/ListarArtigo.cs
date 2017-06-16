@@ -25,7 +25,7 @@ namespace Artigo
             var conn = Login.ConnectOpen;
 
             //Criar listar usuário
-            string sql = "Select * from Artigo";
+            string sql = "Select idartigo,titulo,conteudo,datahora_submissao from Artigo where enviado like '%nao%'";
             DataTable dt = new DataTable();
             SqlDataAdapter da = new SqlDataAdapter(sql, conn);
             da.Fill(dt);

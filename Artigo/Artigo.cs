@@ -116,6 +116,7 @@ namespace Artigo
                 sql.Append("Insert into Artigo(titulo, conteudo, datahora_submissao,id_usuario,id_area_interesse_fk)");
                 sql.Append("Values (@titulo, @conteudo, @datahora_submissao,@id_usuario,@id_area_interesse_fk)");
                 var id_usuario = Login.idusuario;
+                string enviado = "nao";
                 DataLogin ds = new DataLogin();
                 string datahora_submissao = ds.retornarData();
                 SqlCommand command = null;
@@ -125,6 +126,7 @@ namespace Artigo
                     command.Parameters.Add(new SqlParameter("@titulo", artigo_Titulo.Text));
                     command.Parameters.Add(new SqlParameter("@conteudo", artigo_Conteudo.Text));
                     command.Parameters.Add(new SqlParameter("@datahora_submissao", datahora_submissao));
+                    command.Parameters.Add(new SqlParameter("@enviado", enviado));
                     command.Parameters.Add(new SqlParameter("@id_usuario", id_usuario));
                     command.Parameters.Add(new SqlParameter("@id_area_interesse_fk", idArea));
 
@@ -327,13 +329,19 @@ namespace Artigo
             {
                 if (idartigo > 0 && Login.perfilUser == 3)
                 {
+                    string sqlFk = "DELETE FROM Revisao WHERE id_artigo = @id_artigo";
                     string sql = "DELETE FROM Artigo WHERE idartigo = @idartigo";
                     SqlCommand command = null;
+                    SqlCommand com = null;
+
                     try
                     {
+                        com = new SqlCommand(sqlFk, ConnectOpen);
+                        com.Parameters.Add(new SqlParameter("@id_artigo", idartigo));
                         command = new SqlCommand(sql, ConnectOpen);
                         command.Parameters.Add(new SqlParameter("@idartigo", idartigo));
                         //utilizado para executar o comando SQL, se não tiver esse comando não insere nada no banco!
+                        com.ExecuteNonQuery();
                         command.ExecuteNonQuery();
                         MessageBox.Show("Artigo deletado!");
                         Hide();
