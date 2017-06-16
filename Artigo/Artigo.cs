@@ -17,6 +17,7 @@ namespace Artigo
         private Conexao con = null;// abrir o banco
         public SqlConnection ConnectOpen = null; //Abrir a conexão
         public static int idartigo;
+        private int idArea;
 
         public Artigo()
         {
@@ -64,7 +65,6 @@ namespace Artigo
 
         private void btn_Submeter_Click(object sender, EventArgs e)
         {
-            int idArea = 0;
             SqlDataReader rdr;
             SqlCommand cmd;
             var conn = Login.ConnectOpen;
@@ -187,14 +187,48 @@ namespace Artigo
 
         private void btn_Aprovar_Click(object sender, EventArgs e)
         {
-                StringBuilder sql = new StringBuilder();
-                sql.Append("Insert into Revisao(status, datahora_avaliacao,id_artigo,id_usuario)");
-                sql.Append("Values (@status, @datahora_avaliacao,@id_artigo,@id_usuario)");
+            int id_usuario = Login.idusuario;
+            string status = "Aprovado";
+            DataLogin ds = new DataLogin();
+            string datahora_aprovacao = ds.retornarData();
 
-                int id_usuario = Login.idusuario;
-                string status = "Aprovado";
-                DataLogin ds = new DataLogin();
-                string datahora_aprovacao = ds.retornarData();
+            var conn = Login.ConnectOpen;
+                //Buscar codigo digitado, caso não encontre retornará com uma menssagem informando que o codigo não foi encontrado
+                string sqlRevisor = "Select * from Revisao where id_artigo = " + idartigo;
+                DataTable dt = new DataTable();
+                SqlDataAdapter da = new SqlDataAdapter(sqlRevisor, conn);
+                da.Fill(dt);
+                //Se o artigo ainda não tiver sido avaliado, será inserido na tabela Revisao
+                if (dt.Rows.Count <= 0)
+                {
+                    StringBuilder sql = new StringBuilder();
+                    sql.Append("Insert into Revisao(status, datahora_avaliacao,id_artigo,id_usuario)");
+                    sql.Append("Values (@status, @datahora_avaliacao,@id_artigo,@id_usuario)");
+
+                    SqlCommand command = null;
+                    try
+                    {
+                        command = new SqlCommand(sql.ToString(), ConnectOpen);
+                        command.Parameters.Add(new SqlParameter("@status", status));
+                        command.Parameters.Add(new SqlParameter("@datahora_avaliacao", datahora_aprovacao));
+                        command.Parameters.Add(new SqlParameter("@id_artigo", idartigo));
+                        command.Parameters.Add(new SqlParameter("@id_usuario", id_usuario));
+
+                        //utilizado para executar o comando SQL, se não tiver esse comando não insere nada no banco!
+                        command.ExecuteNonQuery();
+                        MessageBox.Show("Aprovado com sucesso!");
+                        Hide();
+                    }
+                    catch (Exception)
+                    {
+                        MessageBox.Show("Erro ao aprovar");
+                        throw;
+                    }
+            }
+            //Se o artigo já tiver sido inserido, será apenas ataulizado a avaliação
+            else
+            {
+                string sql = "UPDATE Revisao SET status = @status WHERE id_artigo = " + idartigo;
 
                 SqlCommand command = null;
                 try
@@ -205,21 +239,84 @@ namespace Artigo
                     command.Parameters.Add(new SqlParameter("@id_artigo", idartigo));
                     command.Parameters.Add(new SqlParameter("@id_usuario", id_usuario));
 
-                //utilizado para executar o comando SQL, se não tiver esse comando não insere nada no banco!
-                command.ExecuteNonQuery();
-                    MessageBox.Show("Aprovação realizada com sucesso!");
-                    Hide();
+                    //utilizado para executar o comando SQL, se não tiver esse comando não insere nada no banco!
+                    command.ExecuteNonQuery();
+                    MessageBox.Show("Aprovado com sucesso!");
+     
                 }
                 catch (Exception)
                 {
-                    MessageBox.Show("Erro ao aprovar");
+                    MessageBox.Show("Erro ao Aprovado!");
                     throw;
                 }
             }
 
+      }
         private void btn_Reprovar_Click(object sender, EventArgs e)
         {
-           
+            int id_usuario = Login.idusuario;
+            string status = "Reprovado";
+            DataLogin ds = new DataLogin();
+            string datahora_aprovacao = ds.retornarData();
+
+            var conn = Login.ConnectOpen;
+            //Buscar codigo digitado, caso não encontre retornará com uma menssagem informando que o codigo não foi encontrado
+            string sqlRevisor = "Select * from Revisao where id_artigo = " + idartigo;
+            DataTable dt = new DataTable();
+            SqlDataAdapter da = new SqlDataAdapter(sqlRevisor, conn);
+            da.Fill(dt);
+            //Se o artigo ainda não tiver sido avaliado, será inserido na tabela Revisao
+            if (dt.Rows.Count <= 0)
+            {
+                StringBuilder sql = new StringBuilder();
+                sql.Append("Insert into Revisao(status, datahora_avaliacao,id_artigo,id_usuario)");
+                sql.Append("Values (@status, @datahora_avaliacao,@id_artigo,@id_usuario)");
+
+                SqlCommand command = null;
+                try
+                {
+                    command = new SqlCommand(sql.ToString(), ConnectOpen);
+                    command.Parameters.Add(new SqlParameter("@status", status));
+                    command.Parameters.Add(new SqlParameter("@datahora_avaliacao", datahora_aprovacao));
+                    command.Parameters.Add(new SqlParameter("@id_artigo", idartigo));
+                    command.Parameters.Add(new SqlParameter("@id_usuario", id_usuario));
+
+                    //utilizado para executar o comando SQL, se não tiver esse comando não insere nada no banco!
+                    command.ExecuteNonQuery();
+                    MessageBox.Show("Reprovado com sucesso!");
+                    Hide();
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("Erro ao Reprovado");
+                    throw;
+                }
+            }
+            //Se o artigo já tiver sido inserido, será apenas ataulizado a avaliação
+            else
+            {
+                string sql = "UPDATE Revisao SET status = @status WHERE id_artigo = " + idartigo;
+
+                SqlCommand command = null;
+                try
+                {
+                    command = new SqlCommand(sql.ToString(), ConnectOpen);
+                    command.Parameters.Add(new SqlParameter("@status", status));
+                    command.Parameters.Add(new SqlParameter("@datahora_avaliacao", datahora_aprovacao));
+                    command.Parameters.Add(new SqlParameter("@id_artigo", idartigo));
+                    command.Parameters.Add(new SqlParameter("@id_usuario", id_usuario));
+
+                    //utilizado para executar o comando SQL, se não tiver esse comando não insere nada no banco!
+                    command.ExecuteNonQuery();
+                    MessageBox.Show("Reprovado com sucesso!");
+
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("Erro ao Reprovado!");
+                    throw;
+                }
+            }
         }
 
         private void btn_Deletar_Click(object sender, EventArgs e)
@@ -236,13 +333,10 @@ namespace Artigo
                     {
                         command = new SqlCommand(sql, ConnectOpen);
                         command.Parameters.Add(new SqlParameter("@idartigo", idartigo));
-
                         //utilizado para executar o comando SQL, se não tiver esse comando não insere nada no banco!
                         command.ExecuteNonQuery();
-
                         MessageBox.Show("Artigo deletado!");
                         Hide();
-
                     }
                     catch (Exception)
                     {
