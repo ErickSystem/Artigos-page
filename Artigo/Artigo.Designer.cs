@@ -39,6 +39,7 @@
             this.btn_Justificar = new System.Windows.Forms.Button();
             this.btn_listarArtigo = new System.Windows.Forms.Button();
             this.cmb_areaInter = new System.Windows.Forms.ComboBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // artigo_Titulo
@@ -162,6 +163,18 @@
             this.cmb_areaInter.TabIndex = 0;
             this.cmb_areaInter.MouseClick += new System.Windows.Forms.MouseEventHandler(this.cmd_AreaInteresse);
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Font = new System.Drawing.Font("Monotype Corsiva", 20.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(345, 9);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(191, 33);
+            this.label2.TabIndex = 11;
+            this.label2.Text = "Área de interesse";
+            // 
             // Artigo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -169,6 +182,7 @@
             this.BackgroundImage = global::Artigo.Properties.Resources.books2;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1187, 686);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.cmb_areaInter);
             this.Controls.Add(this.btn_listarArtigo);
             this.Controls.Add(this.btn_Justificar);
@@ -202,5 +216,6 @@
         private System.Windows.Forms.Button btn_Justificar;
         private System.Windows.Forms.Button btn_listarArtigo;
         private System.Windows.Forms.ComboBox cmb_areaInter;
+        private System.Windows.Forms.Label label2;
     }
 }

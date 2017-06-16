@@ -27,6 +27,7 @@ namespace Artigo
             DataLogin data = new DataLogin();
             label_data.Text = data.retornarData();
             label_user.Text = Login.nomeUser;
+            text_areaInteresse.Text = Login.area_interesse;
              //Mostrar na tela qual tipo de usuário está logado
             if (Login.perfilUser == 3)
             {

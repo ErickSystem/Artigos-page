@@ -1,4 +1,4 @@
-﻿USE [C:\USERS\ERICK\DESKTOP\MEGA-NUVEM\PROGRAMMING\REPOSITORY\ARTIGOS-PAGE\ARTIGO\DBARTIGOS.MDF];  
+USE [C:\USERS\ERICK\DESKTOP\MEGA-NUVEM\PROGRAMMING\REPOSITORY\ARTIGOS-PAGE\ARTIGO\DBARTIGOS.MDF];  
 GO  
 EXEC sp_rename 'Usuarios.tipo_de_usuario', 'perfil', 'COLUMN';  
 GO  
@@ -9,8 +9,8 @@ ALTER TABLE [dbo].[Revisao] ADD CONSTRAINT fk_artigo_id FOREIGN KEY(id_artigo) R
 
 //Area interesse
 
-ALTER TABLE [dbo].[Area_interesse_artigo] ADD CONSTRAINT 
-fk_area_artigo_id FOREIGN KEY(id_artigo) REFERENCES Artigo(idartigo);
+ALTER TABLE [dbo].[Artigo] ADD CONSTRAINT fk_areaInteresse_id 
+FOREIGN KEY(id_area_interesse_fk) REFERENCES Area_interesse_artigo(idarea_interesse_artigo);
 
 
 ALTER TABLE [dbo].[Artigo] DROP CONSTRAINT fk_artigo_id;
@@ -22,3 +22,8 @@ from Artigo a inner join Revisao r on a.Id = r.fk_artigo_id
 where r.id_artigo = 14;
 
 PRIMARY KEY CLUSTERED ([idartigo] ASC)
+
+PRIMARY KEY CLUSTERED ([idarea_interesse_artigo] ASC)
+
+    PRIMARY KEY CLUSTERED ([idartigo] ASC)
+

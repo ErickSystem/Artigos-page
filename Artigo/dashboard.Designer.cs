@@ -41,6 +41,8 @@
             this.btn_endiados = new System.Windows.Forms.Button();
             this.btn_cadastro_user = new System.Windows.Forms.Button();
             this.btn_revisar = new System.Windows.Forms.Button();
+            this.label4 = new System.Windows.Forms.Label();
+            this.text_areaInteresse = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btn_Artigos
@@ -50,7 +52,7 @@
             this.btn_Artigos.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btn_Artigos.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Artigos.ForeColor = System.Drawing.Color.Black;
-            this.btn_Artigos.Location = new System.Drawing.Point(138, 128);
+            this.btn_Artigos.Location = new System.Drawing.Point(138, 191);
             this.btn_Artigos.Name = "btn_Artigos";
             this.btn_Artigos.Size = new System.Drawing.Size(120, 140);
             this.btn_Artigos.TabIndex = 1;
@@ -145,7 +147,7 @@
             this.btn_Status.BackgroundImage = global::Artigo.Properties.Resources.homework_icon;
             this.btn_Status.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btn_Status.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Status.Location = new System.Drawing.Point(264, 128);
+            this.btn_Status.Location = new System.Drawing.Point(264, 191);
             this.btn_Status.Name = "btn_Status";
             this.btn_Status.Size = new System.Drawing.Size(120, 140);
             this.btn_Status.TabIndex = 10;
@@ -160,7 +162,7 @@
             this.btn_areaInteresse.BackgroundImage = global::Artigo.Properties.Resources.Green;
             this.btn_areaInteresse.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btn_areaInteresse.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_areaInteresse.Location = new System.Drawing.Point(264, 271);
+            this.btn_areaInteresse.Location = new System.Drawing.Point(264, 334);
             this.btn_areaInteresse.Name = "btn_areaInteresse";
             this.btn_areaInteresse.Size = new System.Drawing.Size(120, 140);
             this.btn_areaInteresse.TabIndex = 11;
@@ -176,7 +178,7 @@
             this.btn_endiados.BackgroundImage = global::Artigo.Properties.Resources.vanban02;
             this.btn_endiados.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btn_endiados.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_endiados.Location = new System.Drawing.Point(12, 271);
+            this.btn_endiados.Location = new System.Drawing.Point(12, 334);
             this.btn_endiados.Name = "btn_endiados";
             this.btn_endiados.Size = new System.Drawing.Size(120, 140);
             this.btn_endiados.TabIndex = 12;
@@ -191,7 +193,7 @@
             this.btn_cadastro_user.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_cadastro_user.Image = global::Artigo.Properties.Resources.user_img;
             this.btn_cadastro_user.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btn_cadastro_user.Location = new System.Drawing.Point(12, 128);
+            this.btn_cadastro_user.Location = new System.Drawing.Point(12, 191);
             this.btn_cadastro_user.Name = "btn_cadastro_user";
             this.btn_cadastro_user.Size = new System.Drawing.Size(120, 140);
             this.btn_cadastro_user.TabIndex = 0;
@@ -207,7 +209,7 @@
             this.btn_revisar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btn_revisar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_revisar.ForeColor = System.Drawing.Color.Black;
-            this.btn_revisar.Location = new System.Drawing.Point(138, 271);
+            this.btn_revisar.Location = new System.Drawing.Point(138, 334);
             this.btn_revisar.Name = "btn_revisar";
             this.btn_revisar.Size = new System.Drawing.Size(120, 140);
             this.btn_revisar.TabIndex = 13;
@@ -218,6 +220,29 @@
             this.btn_revisar.Visible = false;
             this.btn_revisar.Click += new System.EventHandler(this.btn_revisarArtigo);
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.Transparent;
+            this.label4.Font = new System.Drawing.Font("Monotype Corsiva", 20.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.White;
+            this.label4.Location = new System.Drawing.Point(12, 112);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(199, 33);
+            this.label4.TabIndex = 15;
+            this.label4.Text = "Area de interesse:";
+            // 
+            // text_areaInteresse
+            // 
+            this.text_areaInteresse.AutoSize = true;
+            this.text_areaInteresse.BackColor = System.Drawing.Color.Transparent;
+            this.text_areaInteresse.Font = new System.Drawing.Font("Monotype Corsiva", 20.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.text_areaInteresse.ForeColor = System.Drawing.Color.White;
+            this.text_areaInteresse.Location = new System.Drawing.Point(225, 111);
+            this.text_areaInteresse.Name = "text_areaInteresse";
+            this.text_areaInteresse.Size = new System.Drawing.Size(0, 33);
+            this.text_areaInteresse.TabIndex = 14;
+            // 
             // Dashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -225,6 +250,8 @@
             this.BackgroundImage = global::Artigo.Properties.Resources.books2;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1187, 661);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.text_areaInteresse);
             this.Controls.Add(this.btn_revisar);
             this.Controls.Add(this.btn_endiados);
             this.Controls.Add(this.btn_areaInteresse);
@@ -262,6 +289,8 @@
         private System.Windows.Forms.Button btn_areaInteresse;
         private System.Windows.Forms.Button btn_endiados;
         private System.Windows.Forms.Button btn_revisar;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label text_areaInteresse;
     }
 }
 

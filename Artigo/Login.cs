@@ -19,6 +19,7 @@ namespace Artigo
         public char PasswordChar { get; set; }
         public static int perfilUser;
         public static string nomeUser;
+        public static string area_interesse;
         public static int idusuario;
 
         public Login()
@@ -51,6 +52,7 @@ namespace Artigo
                 logado = true;
                 idusuario = Convert.ToInt16(dt.Rows[0][0]);
                 perfilUser = Convert.ToInt16(dt.Rows[0][4]);
+                area_interesse = Convert.ToString(dt.Rows[0][5]);
                 nomeUser = Convert.ToString(dt.Rows[0][1]);
                 var frm = new Dashboard();
                 frm.ShowDialog();
