@@ -118,32 +118,35 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="books1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\books1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="books2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\books2.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="lupa1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\lupa1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="library2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\library2.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Green" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Green.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="user_img" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\user_img.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="download" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\download1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="books2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\books2.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="homework_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\homework_icon.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="user_img" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\user_img.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="vanban02" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\vanban02.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="library-books" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\library-books.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="article144" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\article144.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="lupa1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\lupa1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="books1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\books1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="books3" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\books3.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -151,7 +154,10 @@
   <data name="library1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\library1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="library-books" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\library-books.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Green" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Green.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="reverArtigo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\reverArtigo1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

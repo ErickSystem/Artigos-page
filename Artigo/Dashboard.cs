@@ -15,6 +15,7 @@ namespace Artigo
     {
         private int logado = 0;
         public static int criarArtigo = 0;
+        public static int esconderSubmeter = 0;
 
         public Dashboard()
         {
@@ -28,31 +29,33 @@ namespace Artigo
             label_data.Text = data.retornarData();
             label_user.Text = Login.nomeUser;
             text_areaInteresse.Text = Login.area_interesse;
-             //Mostrar na tela qual tipo de usuário está logado
+            //Mostrar na tela qual tipo de usuário está logado
             if (Login.perfilUser == 3)
             {
                 btn_cadastro_user.Visible = true;
                 label_tipoUser.Text = "Gerente";
             }
-            else if(Login.perfilUser == 2)
+            else if (Login.perfilUser == 2)
             {
                 label_tipoUser.Text = "Revisor";
                 btn_revisar.Visible = true;
 
-            }else if(Login.perfilUser == 1)
+            }
+            else if (Login.perfilUser == 1)
             {
                 label_tipoUser.Text = "Autor";
-            }else
+            }
+            else
             {
                 label_tipoUser.Text = "sem permissões";
             }
-            if(Login.perfilUser == 3)
+            if (Login.perfilUser == 3)
             {
                 btn_areaInteresse.Visible = true;
                 btn_revisar.Visible = true;
             }
         }
-       private void btn_cadastro(object sender, EventArgs e)
+        private void btn_cadastro(object sender, EventArgs e)
         {
             Cadastrar frms = new Cadastrar();
             frms.ShowDialog();
@@ -69,7 +72,7 @@ namespace Artigo
             }
         }
         public int deslogar(int logado)
-        {   
+        {
             this.logado = logado;
             return logado;
         }
@@ -79,7 +82,7 @@ namespace Artigo
             criarArtigo++;
             Artigo artigo = new Artigo();
             artigo.ShowDialog();
-            
+
         }
 
         private void btn_Status_Click(object sender, EventArgs e)
@@ -102,6 +105,7 @@ namespace Artigo
 
         private void btn_revisarArtigo(object sender, EventArgs e)
         {
+            esconderSubmeter++;
             var artigos = new Artigo();
             artigos.ShowDialog();
         }
@@ -111,7 +115,11 @@ namespace Artigo
             Dashboard.criarArtigo = criarArtigo;
             return Dashboard.criarArtigo;
         }
+        public int buttonSubmeter(int escondeSubmter)
+        {
+            Dashboard.esconderSubmeter = escondeSubmter;
+            return Dashboard.esconderSubmeter;
+        }
+
     }
-
-
 }

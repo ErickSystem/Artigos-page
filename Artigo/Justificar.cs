@@ -25,39 +25,79 @@ namespace Artigo
 
         private void btn_Salvar_Click(object sender, EventArgs e)
         {
-
-            int id_usuario = Login.idusuario;
-            int id_artigo = Artigo.idartigo;
-            string status = "sem revisao";
             DataLogin data = new DataLogin();
             string datahora_avaliacao = data.retornarData();
 
-            StringBuilder sql = new StringBuilder();
-            sql.Append("Insert into Revisao(status, justificativa, datahora_avaliacao,id_artigo,id_usuario)");
-            sql.Append("Values (@status, @justificativa, @datahora_avaliacao,@id_artigo,@id_usuario)");
+            var conn = Login.ConnectOpen;
+            //Buscar codigo digitado, caso não encontre retornará com uma menssagem informando que o codigo não foi encontrado
+            string sqlRevisor = "Select * from Revisao where id_artigo = " + Artigo.idartigo; 
+            DataTable dt = new DataTable();
+            SqlDataAdapter da = new SqlDataAdapter(sqlRevisor, conn);
+            da.Fill(dt);
 
-            SqlCommand command = null;
-            try
-            {
-                command = new SqlCommand(sql.ToString(), ConnectOpen);
-                command.Parameters.Add(new SqlParameter("@status", status));
-                command.Parameters.Add(new SqlParameter("@justificativa", text_Justificativa.Text));
-                command.Parameters.Add(new SqlParameter("@datahora_avaliacao", datahora_avaliacao));
-                command.Parameters.Add(new SqlParameter("@id_artigo", id_artigo));
-                command.Parameters.Add(new SqlParameter("@id_usuario", id_usuario));
+            /* if(dt.Rows.Count <= 0)
+             {
+                   StringBuilder sql = new StringBuilder();
+                 sql.Append("Insert into Revisao(status, justificativa, datahora_avaliacao,id_artigo,id_usuario)");
+                 sql.Append("Values (@status, @justificativa, @datahora_avaliacao,@id_artigo,@id_usuario)");
 
-                //utilizado para executar o comando SQL, se não tiver esse comando não insere nada no banco!
-                command.ExecuteNonQuery();
-                MessageBox.Show("Justificativa salva!");
-                Hide();
-            }
-            catch (Exception)
+                 SqlCommand command = null;
+                 try
+                 {
+                     command = new SqlCommand(sql.ToString(), ConnectOpen);
+                     command.Parameters.Add(new SqlParameter("@justificativa", text_Justificativa.Text));
+                     command.Parameters.Add(new SqlParameter("@datahora_avaliacao", datahora_avaliacao));
+                     command.Parameters.Add(new SqlParameter("@id_artigo", Artigo.idartigo));
+                     command.Parameters.Add(new SqlParameter("@id_usuario", Login.idusuario));
+
+                     //utilizado para executar o comando SQL, se não tiver esse comando não insere nada no banco!
+                     command.ExecuteNonQuery();
+                     MessageBox.Show("Justificativa salva!");
+                     Hide();
+                 }
+                 catch (Exception)
+                 {
+                     MessageBox.Show("Erro ao Justificar");
+                     throw;
+                 }
+             }
+             */
+            //Se já existir será apenas atualizado
+
+            if (dt.Rows.Count > 0)
             {
-                MessageBox.Show("Erro ao cadastrar");
-                throw;
+                string sql = "UPDATE Revisao SET justificativa = @justificativa,datahora_avaliacao = @datahora_avaliacao,id_artigo = @id_artigo, id_usuario = @id_usuario WHERE id_artigo = " + Artigo.idartigo;
+
+                SqlCommand command = null;
+                try
+                {
+                    command = new SqlCommand(sql.ToString(), ConnectOpen);
+                    command.Parameters.Add(new SqlParameter("@justificativa", text_Justificativa.Text));
+                    command.Parameters.Add(new SqlParameter("@datahora_avaliacao", datahora_avaliacao));
+                    command.Parameters.Add(new SqlParameter("@id_artigo", Artigo.idartigo));
+                    command.Parameters.Add(new SqlParameter("@id_usuario", Login.idusuario));
+
+                    //utilizado para executar o comando SQL, se não tiver esse comando não insere nada no banco!
+                    command.ExecuteNonQuery();
+                    MessageBox.Show("Justificativa salva!");
+                    Hide();
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("Erro ao Justificar!");
+                    throw;
+                }
             }
+            else
+            {
+                MessageBox.Show("Artigo nao associado, não pode ser justificado");
+            }
+            
+                
+
             Artigo artigo = new Artigo();
             artigo.Hide();
-        }
-    }
+       } 
+   }
 }
+

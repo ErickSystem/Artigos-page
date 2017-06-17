@@ -38,11 +38,17 @@ namespace Artigo
 
         private void Artigo_Load(object sender, EventArgs e)
         {
+            if (Dashboard.esconderSubmeter > 0)
+            {
+                btn_Submeter.Visible = false;
+                Dashboard da = new Dashboard();
+                da.buttonSubmeter(0);
+            }
 
-            if(Login.perfilUser == 2 || Login.perfilUser == 3)
+            if (Login.perfilUser == 2 || Login.perfilUser == 3)
             {
                 btn_listarArtigo.Visible = true;
-               
+
             }
             //quando for clicado para criar o artigo, o botão listar vai sumir
             if (Dashboard.criarArtigo > 0)
@@ -73,7 +79,7 @@ namespace Artigo
             {
                 MessageBox.Show("Preencha todos os campos para salvar");
             }
-            else
+            else if(artigo_Titulo.Text != "" && artigo_Conteudo.Text != "" && cmb_areaInter.Text != "")
             {
                 cmd = new SqlCommand("Select * from Area_interesse_artigo", conn);
                 rdr = cmd.ExecuteReader();
@@ -110,11 +116,12 @@ namespace Artigo
                 else
                 {
                     MessageBox.Show("Lista vazia!");
+                    return;
                 }
 
                 StringBuilder sql = new StringBuilder();
-                sql.Append("Insert into Artigo(titulo, conteudo, datahora_submissao,id_usuario,id_area_interesse_fk)");
-                sql.Append("Values (@titulo, @conteudo, @datahora_submissao,@id_usuario,@id_area_interesse_fk)");
+                sql.Append("Insert into Artigo(titulo, conteudo, enviado, datahora_submissao,id_usuario,id_area_interesse_fk)");
+                sql.Append("Values (@titulo, @conteudo,@enviado, @datahora_submissao,@id_usuario,@id_area_interesse_fk)");
                 var id_usuario = Login.idusuario;
                 string enviado = "nao";
                 DataLogin ds = new DataLogin();
@@ -141,7 +148,11 @@ namespace Artigo
                     MessageBox.Show("Erro ao submeter artigo");
                     throw;
                 }
-            }//Fim do else
+            }//Fim do if else
+            else
+            {
+                MessageBox.Show("Ainda há campos vazios.");
+            }
         }
         private void btn_listarArtigo_Click(object sender, EventArgs e)
         {
@@ -195,37 +206,37 @@ namespace Artigo
             string datahora_aprovacao = ds.retornarData();
 
             var conn = Login.ConnectOpen;
-                //Buscar codigo digitado, caso não encontre retornará com uma menssagem informando que o codigo não foi encontrado
-                string sqlRevisor = "Select * from Revisao where id_artigo = " + idartigo;
-                DataTable dt = new DataTable();
-                SqlDataAdapter da = new SqlDataAdapter(sqlRevisor, conn);
-                da.Fill(dt);
-                //Se o artigo ainda não tiver sido avaliado, será inserido na tabela Revisao
-                if (dt.Rows.Count <= 0)
+            //Buscar codigo digitado, caso não encontre retornará com uma menssagem informando que o codigo não foi encontrado
+            string sqlRevisor = "Select * from Revisao where id_artigo = " + idartigo;
+            DataTable dt = new DataTable();
+            SqlDataAdapter da = new SqlDataAdapter(sqlRevisor, conn);
+            da.Fill(dt);
+            //Se o artigo ainda não tiver sido avaliado, será inserido na tabela Revisao
+            if (dt.Rows.Count <= 0)
+            {
+                StringBuilder sql = new StringBuilder();
+                sql.Append("Insert into Revisao(status, datahora_avaliacao,id_artigo,id_usuario)");
+                sql.Append("Values (@status, @datahora_avaliacao,@id_artigo,@id_usuario)");
+
+                SqlCommand command = null;
+                try
                 {
-                    StringBuilder sql = new StringBuilder();
-                    sql.Append("Insert into Revisao(status, datahora_avaliacao,id_artigo,id_usuario)");
-                    sql.Append("Values (@status, @datahora_avaliacao,@id_artigo,@id_usuario)");
+                    command = new SqlCommand(sql.ToString(), ConnectOpen);
+                    command.Parameters.Add(new SqlParameter("@status", status));
+                    command.Parameters.Add(new SqlParameter("@datahora_avaliacao", datahora_aprovacao));
+                    command.Parameters.Add(new SqlParameter("@id_artigo", idartigo));
+                    command.Parameters.Add(new SqlParameter("@id_usuario", id_usuario));
 
-                    SqlCommand command = null;
-                    try
-                    {
-                        command = new SqlCommand(sql.ToString(), ConnectOpen);
-                        command.Parameters.Add(new SqlParameter("@status", status));
-                        command.Parameters.Add(new SqlParameter("@datahora_avaliacao", datahora_aprovacao));
-                        command.Parameters.Add(new SqlParameter("@id_artigo", idartigo));
-                        command.Parameters.Add(new SqlParameter("@id_usuario", id_usuario));
-
-                        //utilizado para executar o comando SQL, se não tiver esse comando não insere nada no banco!
-                        command.ExecuteNonQuery();
-                        MessageBox.Show("Aprovado com sucesso!");
-                        Hide();
-                    }
-                    catch (Exception)
-                    {
-                        MessageBox.Show("Erro ao aprovar");
-                        throw;
-                    }
+                    //utilizado para executar o comando SQL, se não tiver esse comando não insere nada no banco!
+                    command.ExecuteNonQuery();
+                    MessageBox.Show("Aprovado com sucesso!");
+                    Hide();
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("Erro ao aprovar");
+                    throw;
+                }
             }
             //Se o artigo já tiver sido inserido, será apenas ataulizado a avaliação
             else
@@ -244,7 +255,7 @@ namespace Artigo
                     //utilizado para executar o comando SQL, se não tiver esse comando não insere nada no banco!
                     command.ExecuteNonQuery();
                     MessageBox.Show("Aprovado com sucesso!");
-     
+
                 }
                 catch (Exception)
                 {
@@ -253,9 +264,10 @@ namespace Artigo
                 }
             }
 
-      }
+        }
         private void btn_Reprovar_Click(object sender, EventArgs e)
         {
+            
             int id_usuario = Login.idusuario;
             string status = "Reprovado";
             DataLogin ds = new DataLogin();
@@ -285,6 +297,8 @@ namespace Artigo
 
                     //utilizado para executar o comando SQL, se não tiver esse comando não insere nada no banco!
                     command.ExecuteNonQuery();
+                    Justificar justificar = new Justificar();
+                    justificar.ShowDialog();
                     MessageBox.Show("Reprovado com sucesso!");
                     Hide();
                 }
@@ -310,8 +324,10 @@ namespace Artigo
 
                     //utilizado para executar o comando SQL, se não tiver esse comando não insere nada no banco!
                     command.ExecuteNonQuery();
+                    Justificar justificar = new Justificar();
+                    justificar.ShowDialog();
                     MessageBox.Show("Reprovado com sucesso!");
-
+                    Hide();
                 }
                 catch (Exception)
                 {
@@ -370,7 +386,7 @@ namespace Artigo
             cmb_areaInter.DataSource = null;
             da.Fill(dtResultado);
             cmb_areaInter.DataSource = dtResultado;
-           // cmb_areaInter.ValueMember = "area";
+            // cmb_areaInter.ValueMember = "area";
             cmb_areaInter.DisplayMember = "area";
             cmb_areaInter.SelectedItem = "";
             cmb_areaInter.Refresh(); //faz uma nova busca no BD para preencher os valores da cb de departamentos.

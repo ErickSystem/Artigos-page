@@ -28,10 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btn_salvar = new System.Windows.Forms.Button();
             this.text_areaInteresse = new System.Windows.Forms.TextBox();
             this.btn_cancelar = new System.Windows.Forms.Button();
@@ -47,6 +47,7 @@
             this.btn_ListarRevisor = new System.Windows.Forms.Button();
             this.cmd_Areas = new System.Windows.Forms.ComboBox();
             this.btn_Criarnovo = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.grid_Areas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grid_Revisores)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.codigo_revisor)).BeginInit();
@@ -103,16 +104,16 @@
             // 
             // grid_Areas
             // 
-            dataGridViewCellStyle13.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.grid_Areas.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle13;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grid_Areas.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.grid_Areas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.grid_Areas.Location = new System.Drawing.Point(24, 69);
             this.grid_Areas.Margin = new System.Windows.Forms.Padding(4);
             this.grid_Areas.Name = "grid_Areas";
-            dataGridViewCellStyle14.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.Color.Blue;
-            this.grid_Areas.RowsDefaultCellStyle = dataGridViewCellStyle14;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Blue;
+            this.grid_Areas.RowsDefaultCellStyle = dataGridViewCellStyle2;
             this.grid_Areas.Size = new System.Drawing.Size(519, 372);
             this.grid_Areas.TabIndex = 4;
             this.grid_Areas.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgrid_double);
@@ -143,6 +144,7 @@
             this.btn_Excluir.TabIndex = 6;
             this.btn_Excluir.Text = "Excluir";
             this.btn_Excluir.UseVisualStyleBackColor = true;
+            this.btn_Excluir.Visible = false;
             this.btn_Excluir.Click += new System.EventHandler(this.btn_Excluir_Click);
             // 
             // btn_ListarAreas
@@ -160,16 +162,16 @@
             // 
             // grid_Revisores
             // 
-            dataGridViewCellStyle15.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.grid_Revisores.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle15;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grid_Revisores.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
             this.grid_Revisores.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.grid_Revisores.Location = new System.Drawing.Point(587, 69);
             this.grid_Revisores.Margin = new System.Windows.Forms.Padding(4);
             this.grid_Revisores.Name = "grid_Revisores";
-            dataGridViewCellStyle16.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle16.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle16.SelectionForeColor = System.Drawing.Color.Blue;
-            this.grid_Revisores.RowsDefaultCellStyle = dataGridViewCellStyle16;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Blue;
+            this.grid_Revisores.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.grid_Revisores.Size = new System.Drawing.Size(653, 372);
             this.grid_Revisores.TabIndex = 8;
             // 
@@ -247,6 +249,20 @@
             this.btn_Criarnovo.Visible = false;
             this.btn_Criarnovo.Click += new System.EventHandler(this.btn_Criarnovo_Click);
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.Black;
+            this.label3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label3.Font = new System.Drawing.Font("Monotype Corsiva", 36F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.White;
+            this.label3.Location = new System.Drawing.Point(172, 9);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(855, 59);
+            this.label3.TabIndex = 16;
+            this.label3.Text = "Clique duas vezes em cima da area para alterar";
+            // 
             // AreaInteresse
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -254,6 +270,7 @@
             this.BackgroundImage = global::Artigo.Properties.Resources.library_books;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1266, 685);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.btn_Criarnovo);
             this.Controls.Add(this.cmd_Areas);
             this.Controls.Add(this.btn_ListarRevisor);
@@ -300,5 +317,6 @@
         private System.Windows.Forms.Button btn_ListarRevisor;
         private System.Windows.Forms.ComboBox cmd_Areas;
         private System.Windows.Forms.Button btn_Criarnovo;
+        private System.Windows.Forms.Label label3;
     }
 }

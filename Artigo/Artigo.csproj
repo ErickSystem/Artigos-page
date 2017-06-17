@@ -187,6 +187,8 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <DependentUpon>DbArtigos.mdf</DependentUpon>
     </Content>
+    <None Include="Resources\reverArtigo1.jpg" />
+    <None Include="Resources\download1.png" />
     <None Include="Resources\library-books.jpg" />
     <None Include="Resources\Green.png" />
     <None Include="Resources\vanban02.png" />

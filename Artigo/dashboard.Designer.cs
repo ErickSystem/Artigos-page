@@ -48,13 +48,13 @@
             // btn_Artigos
             // 
             this.btn_Artigos.BackColor = System.Drawing.Color.Transparent;
-            this.btn_Artigos.BackgroundImage = global::Artigo.Properties.Resources.article144;
+            this.btn_Artigos.BackgroundImage = global::Artigo.Properties.Resources.download;
             this.btn_Artigos.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btn_Artigos.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Artigos.ForeColor = System.Drawing.Color.Black;
-            this.btn_Artigos.Location = new System.Drawing.Point(138, 191);
+            this.btn_Artigos.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Artigos.ForeColor = System.Drawing.Color.DarkRed;
+            this.btn_Artigos.Location = new System.Drawing.Point(522, 214);
             this.btn_Artigos.Name = "btn_Artigos";
-            this.btn_Artigos.Size = new System.Drawing.Size(120, 140);
+            this.btn_Artigos.Size = new System.Drawing.Size(196, 159);
             this.btn_Artigos.TabIndex = 1;
             this.btn_Artigos.Text = "Criar artigos";
             this.btn_Artigos.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -110,10 +110,11 @@
             // 
             // btn_sair
             // 
-            this.btn_sair.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_sair.Location = new System.Drawing.Point(1100, 9);
+            this.btn_sair.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_sair.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_sair.Location = new System.Drawing.Point(1065, 9);
             this.btn_sair.Name = "btn_sair";
-            this.btn_sair.Size = new System.Drawing.Size(75, 25);
+            this.btn_sair.Size = new System.Drawing.Size(110, 58);
             this.btn_sair.TabIndex = 7;
             this.btn_sair.Text = "Sair";
             this.btn_sair.UseVisualStyleBackColor = true;
@@ -144,79 +145,89 @@
             // 
             // btn_Status
             // 
+            this.btn_Status.BackColor = System.Drawing.Color.Transparent;
             this.btn_Status.BackgroundImage = global::Artigo.Properties.Resources.homework_icon;
             this.btn_Status.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btn_Status.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Status.Location = new System.Drawing.Point(264, 191);
+            this.btn_Status.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Status.ForeColor = System.Drawing.Color.DarkRed;
+            this.btn_Status.Location = new System.Drawing.Point(724, 214);
             this.btn_Status.Name = "btn_Status";
-            this.btn_Status.Size = new System.Drawing.Size(120, 140);
+            this.btn_Status.Size = new System.Drawing.Size(192, 159);
             this.btn_Status.TabIndex = 10;
             this.btn_Status.Text = "Status aprovação";
             this.btn_Status.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btn_Status.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btn_Status.UseVisualStyleBackColor = true;
+            this.btn_Status.UseVisualStyleBackColor = false;
             this.btn_Status.Click += new System.EventHandler(this.btn_Status_Click);
             // 
             // btn_areaInteresse
             // 
+            this.btn_areaInteresse.BackColor = System.Drawing.Color.Transparent;
             this.btn_areaInteresse.BackgroundImage = global::Artigo.Properties.Resources.Green;
             this.btn_areaInteresse.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btn_areaInteresse.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_areaInteresse.Location = new System.Drawing.Point(264, 334);
+            this.btn_areaInteresse.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_areaInteresse.ForeColor = System.Drawing.Color.DarkRed;
+            this.btn_areaInteresse.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btn_areaInteresse.Location = new System.Drawing.Point(724, 379);
             this.btn_areaInteresse.Name = "btn_areaInteresse";
-            this.btn_areaInteresse.Size = new System.Drawing.Size(120, 140);
+            this.btn_areaInteresse.Size = new System.Drawing.Size(192, 156);
             this.btn_areaInteresse.TabIndex = 11;
             this.btn_areaInteresse.Text = "Área de interesse";
             this.btn_areaInteresse.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btn_areaInteresse.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btn_areaInteresse.UseVisualStyleBackColor = true;
+            this.btn_areaInteresse.UseVisualStyleBackColor = false;
             this.btn_areaInteresse.Visible = false;
             this.btn_areaInteresse.Click += new System.EventHandler(this.btn_areaInteresse_Click);
             // 
             // btn_endiados
             // 
+            this.btn_endiados.BackColor = System.Drawing.Color.Transparent;
             this.btn_endiados.BackgroundImage = global::Artigo.Properties.Resources.vanban02;
             this.btn_endiados.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btn_endiados.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_endiados.Location = new System.Drawing.Point(12, 334);
+            this.btn_endiados.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_endiados.ForeColor = System.Drawing.Color.DarkRed;
+            this.btn_endiados.Location = new System.Drawing.Point(329, 379);
             this.btn_endiados.Name = "btn_endiados";
-            this.btn_endiados.Size = new System.Drawing.Size(120, 140);
+            this.btn_endiados.Size = new System.Drawing.Size(187, 156);
             this.btn_endiados.TabIndex = 12;
             this.btn_endiados.Text = "Enviados";
             this.btn_endiados.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btn_endiados.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btn_endiados.UseVisualStyleBackColor = true;
+            this.btn_endiados.UseVisualStyleBackColor = false;
             this.btn_endiados.Click += new System.EventHandler(this.btn_endiados_Click);
             // 
             // btn_cadastro_user
             // 
-            this.btn_cadastro_user.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_cadastro_user.BackColor = System.Drawing.Color.Transparent;
+            this.btn_cadastro_user.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_cadastro_user.ForeColor = System.Drawing.Color.DarkRed;
             this.btn_cadastro_user.Image = global::Artigo.Properties.Resources.user_img;
             this.btn_cadastro_user.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btn_cadastro_user.Location = new System.Drawing.Point(12, 191);
+            this.btn_cadastro_user.Location = new System.Drawing.Point(329, 214);
             this.btn_cadastro_user.Name = "btn_cadastro_user";
-            this.btn_cadastro_user.Size = new System.Drawing.Size(120, 140);
+            this.btn_cadastro_user.Size = new System.Drawing.Size(187, 159);
             this.btn_cadastro_user.TabIndex = 0;
             this.btn_cadastro_user.Text = "Cadastrar Usuário";
             this.btn_cadastro_user.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btn_cadastro_user.UseVisualStyleBackColor = true;
+            this.btn_cadastro_user.UseVisualStyleBackColor = false;
             this.btn_cadastro_user.Visible = false;
             this.btn_cadastro_user.Click += new System.EventHandler(this.btn_cadastro);
             // 
             // btn_revisar
             // 
-            this.btn_revisar.BackgroundImage = global::Artigo.Properties.Resources.lupa1;
+            this.btn_revisar.BackColor = System.Drawing.Color.Transparent;
+            this.btn_revisar.BackgroundImage = global::Artigo.Properties.Resources.reverArtigo;
             this.btn_revisar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btn_revisar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_revisar.ForeColor = System.Drawing.Color.Black;
-            this.btn_revisar.Location = new System.Drawing.Point(138, 334);
+            this.btn_revisar.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_revisar.ForeColor = System.Drawing.Color.DarkRed;
+            this.btn_revisar.Location = new System.Drawing.Point(522, 379);
             this.btn_revisar.Name = "btn_revisar";
-            this.btn_revisar.Size = new System.Drawing.Size(120, 140);
+            this.btn_revisar.Size = new System.Drawing.Size(196, 156);
             this.btn_revisar.TabIndex = 13;
             this.btn_revisar.Text = "Revisar artigos";
             this.btn_revisar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btn_revisar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btn_revisar.UseVisualStyleBackColor = true;
+            this.btn_revisar.UseVisualStyleBackColor = false;
             this.btn_revisar.Visible = false;
             this.btn_revisar.Click += new System.EventHandler(this.btn_revisarArtigo);
             // 
@@ -249,7 +260,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::Artigo.Properties.Resources.books2;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1187, 661);
+            this.ClientSize = new System.Drawing.Size(1275, 661);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.text_areaInteresse);
             this.Controls.Add(this.btn_revisar);
