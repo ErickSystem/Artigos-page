@@ -43,7 +43,7 @@ namespace Artigo
             var conn = Login.ConnectOpen;
 
             //Criar listar usuário
-            string sql = "select a.idartigo,a.titulo, r.status,r.justificativa, a.datahora_submissao from Artigo a inner join Revisao r on a.idartigo = r.id_artigo";
+            string sql = "select a.idartigo,a.titulo, r.status,r.justificativa, a.datahora_submissao,a.datahora_atualizado from Artigo a inner join Revisao r on a.idartigo = r.id_artigo where a.enviado like '%nao%'";
             DataTable dt = new DataTable();
             SqlDataAdapter da = new SqlDataAdapter(sql, conn);
             da.Fill(dt);
@@ -120,9 +120,9 @@ namespace Artigo
             var conn = Login.ConnectOpen;
 
 
-            if(text_Status.Text == "Reprovado")
+            if(text_Status.Text == "Pendente" || text_Status.Text == "Não revisado")
             {
-                MessageBox.Show("Você não pode enviar o artigo 'Reprovado', apenas os 'Aprovados'");
+                MessageBox.Show("Apenas os artigos 'Aprovados' podem ser enviados.");
                 CarregarDataGridView();
                 LimparTela();
                 Hide();

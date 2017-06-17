@@ -55,15 +55,17 @@
             // 
             // btn_salvar
             // 
+            this.btn_salvar.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btn_salvar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_salvar.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_salvar.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_salvar.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btn_salvar.Location = new System.Drawing.Point(57, 595);
             this.btn_salvar.Margin = new System.Windows.Forms.Padding(4);
             this.btn_salvar.Name = "btn_salvar";
             this.btn_salvar.Size = new System.Drawing.Size(201, 77);
             this.btn_salvar.TabIndex = 0;
             this.btn_salvar.Text = "Salvar";
-            this.btn_salvar.UseVisualStyleBackColor = true;
+            this.btn_salvar.UseVisualStyleBackColor = false;
             this.btn_salvar.Click += new System.EventHandler(this.btn_salvar_Click);
             // 
             // text_areaInteresse
@@ -77,15 +79,17 @@
             // 
             // btn_cancelar
             // 
+            this.btn_cancelar.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btn_cancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_cancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_cancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_cancelar.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btn_cancelar.Location = new System.Drawing.Point(1102, 595);
             this.btn_cancelar.Margin = new System.Windows.Forms.Padding(4);
             this.btn_cancelar.Name = "btn_cancelar";
             this.btn_cancelar.Size = new System.Drawing.Size(151, 77);
             this.btn_cancelar.TabIndex = 2;
             this.btn_cancelar.Text = "Cancelar";
-            this.btn_cancelar.UseVisualStyleBackColor = true;
+            this.btn_cancelar.UseVisualStyleBackColor = false;
             this.btn_cancelar.Click += new System.EventHandler(this.btn_cancelar_Click);
             // 
             // label1
@@ -120,16 +124,18 @@
             // 
             // btn_Alterar
             // 
+            this.btn_Alterar.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btn_Alterar.Enabled = false;
             this.btn_Alterar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_Alterar.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Alterar.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Alterar.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btn_Alterar.Location = new System.Drawing.Point(24, 13);
             this.btn_Alterar.Margin = new System.Windows.Forms.Padding(4);
             this.btn_Alterar.Name = "btn_Alterar";
             this.btn_Alterar.Size = new System.Drawing.Size(140, 52);
             this.btn_Alterar.TabIndex = 5;
             this.btn_Alterar.Text = "Alterar";
-            this.btn_Alterar.UseVisualStyleBackColor = true;
+            this.btn_Alterar.UseVisualStyleBackColor = false;
             this.btn_Alterar.Click += new System.EventHandler(this.btn_Alterar_Click);
             // 
             // btn_Excluir
@@ -137,10 +143,10 @@
             this.btn_Excluir.Enabled = false;
             this.btn_Excluir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Excluir.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Excluir.Location = new System.Drawing.Point(172, 13);
+            this.btn_Excluir.Location = new System.Drawing.Point(172, 24);
             this.btn_Excluir.Margin = new System.Windows.Forms.Padding(4);
             this.btn_Excluir.Name = "btn_Excluir";
-            this.btn_Excluir.Size = new System.Drawing.Size(140, 52);
+            this.btn_Excluir.Size = new System.Drawing.Size(71, 33);
             this.btn_Excluir.TabIndex = 6;
             this.btn_Excluir.Text = "Excluir";
             this.btn_Excluir.UseVisualStyleBackColor = true;
@@ -149,15 +155,17 @@
             // 
             // btn_ListarAreas
             // 
+            this.btn_ListarAreas.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btn_ListarAreas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_ListarAreas.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_ListarAreas.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_ListarAreas.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btn_ListarAreas.Location = new System.Drawing.Point(310, 595);
             this.btn_ListarAreas.Margin = new System.Windows.Forms.Padding(4);
             this.btn_ListarAreas.Name = "btn_ListarAreas";
             this.btn_ListarAreas.Size = new System.Drawing.Size(200, 77);
             this.btn_ListarAreas.TabIndex = 7;
             this.btn_ListarAreas.Text = "Ver areas";
-            this.btn_ListarAreas.UseVisualStyleBackColor = true;
+            this.btn_ListarAreas.UseVisualStyleBackColor = false;
             this.btn_ListarAreas.Click += new System.EventHandler(this.btn_ListarAreas_Click);
             // 
             // grid_Revisores
@@ -177,15 +185,17 @@
             // 
             // btn_AssociarRevisor
             // 
+            this.btn_AssociarRevisor.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btn_AssociarRevisor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_AssociarRevisor.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_AssociarRevisor.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_AssociarRevisor.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btn_AssociarRevisor.Location = new System.Drawing.Point(613, 595);
             this.btn_AssociarRevisor.Margin = new System.Windows.Forms.Padding(4);
             this.btn_AssociarRevisor.Name = "btn_AssociarRevisor";
             this.btn_AssociarRevisor.Size = new System.Drawing.Size(201, 77);
             this.btn_AssociarRevisor.TabIndex = 12;
             this.btn_AssociarRevisor.Text = "Associar";
-            this.btn_AssociarRevisor.UseVisualStyleBackColor = true;
+            this.btn_AssociarRevisor.UseVisualStyleBackColor = false;
             this.btn_AssociarRevisor.Click += new System.EventHandler(this.btn_AssociarRevisor_Click);
             // 
             // label2
@@ -200,7 +210,7 @@
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(410, 92);
             this.label2.TabIndex = 11;
-            this.label2.Text = "Digite o código do revisor e\r\nselecione a area de interesse";
+            this.label2.Text = "Digite o código do revisor e\r\nselecione a área de interesse";
             // 
             // codigo_revisor
             // 
@@ -214,15 +224,17 @@
             // 
             // btn_ListarRevisor
             // 
+            this.btn_ListarRevisor.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btn_ListarRevisor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_ListarRevisor.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_ListarRevisor.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_ListarRevisor.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btn_ListarRevisor.Location = new System.Drawing.Point(866, 595);
             this.btn_ListarRevisor.Margin = new System.Windows.Forms.Padding(4);
             this.btn_ListarRevisor.Name = "btn_ListarRevisor";
             this.btn_ListarRevisor.Size = new System.Drawing.Size(200, 77);
             this.btn_ListarRevisor.TabIndex = 13;
             this.btn_ListarRevisor.Text = "Ver revisor";
-            this.btn_ListarRevisor.UseVisualStyleBackColor = true;
+            this.btn_ListarRevisor.UseVisualStyleBackColor = false;
             this.btn_ListarRevisor.Click += new System.EventHandler(this.btn_VerRevisor);
             // 
             // cmd_Areas
@@ -237,15 +249,17 @@
             // 
             // btn_Criarnovo
             // 
+            this.btn_Criarnovo.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btn_Criarnovo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_Criarnovo.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Criarnovo.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Criarnovo.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btn_Criarnovo.Location = new System.Drawing.Point(57, 595);
             this.btn_Criarnovo.Margin = new System.Windows.Forms.Padding(4);
             this.btn_Criarnovo.Name = "btn_Criarnovo";
             this.btn_Criarnovo.Size = new System.Drawing.Size(201, 77);
             this.btn_Criarnovo.TabIndex = 15;
             this.btn_Criarnovo.Text = "Cria novo";
-            this.btn_Criarnovo.UseVisualStyleBackColor = true;
+            this.btn_Criarnovo.UseVisualStyleBackColor = false;
             this.btn_Criarnovo.Visible = false;
             this.btn_Criarnovo.Click += new System.EventHandler(this.btn_Criarnovo_Click);
             // 
@@ -254,12 +268,12 @@
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.Black;
             this.label3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label3.Font = new System.Drawing.Font("Monotype Corsiva", 36F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Font = new System.Drawing.Font("Monotype Corsiva", 30F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(172, 9);
+            this.label3.Location = new System.Drawing.Point(172, 14);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(855, 59);
+            this.label3.Size = new System.Drawing.Size(733, 51);
             this.label3.TabIndex = 16;
             this.label3.Text = "Clique duas vezes em cima da area para alterar";
             // 

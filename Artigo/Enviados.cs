@@ -28,7 +28,7 @@ namespace Artigo
             var conn = Login.ConnectOpen;
 
             //Criar listar usuário
-            string sql = "select a.idartigo,a.titulo,ra.area, u.nome as 'Enviado por', a.datahora_enviado FROM (Artigo a INNER JOIN Area_interesse_artigo ra ON a.id_area_interesse_fk = ra.idarea_interesse_artigo) INNER JOIN Usuarios u ON a.id_usuario = u.idusuario WHERE a.enviado like '%sim%'";
+            string sql = "select a.idartigo,a.titulo,ra.area as 'Area de interesse', u.nome as 'Enviado por', a.datahora_enviado FROM (Artigo a INNER JOIN Area_interesse_artigo ra ON a.id_area_interesse_fk = ra.idarea_interesse_artigo) INNER JOIN Usuarios u ON a.id_usuario = u.idusuario WHERE a.enviado like '%sim%'";
             DataTable dt = new DataTable();
             SqlDataAdapter da = new SqlDataAdapter(sql, conn);
             da.Fill(dt);

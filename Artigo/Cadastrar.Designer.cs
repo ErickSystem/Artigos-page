@@ -113,55 +113,63 @@
             // 
             // btn_Cadastrar
             // 
+            this.btn_Cadastrar.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btn_Cadastrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Cadastrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Cadastrar.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btn_Cadastrar.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btn_Cadastrar.Location = new System.Drawing.Point(532, 392);
             this.btn_Cadastrar.Name = "btn_Cadastrar";
             this.btn_Cadastrar.Size = new System.Drawing.Size(120, 70);
             this.btn_Cadastrar.TabIndex = 6;
             this.btn_Cadastrar.Text = "Cadastrar";
-            this.btn_Cadastrar.UseVisualStyleBackColor = true;
+            this.btn_Cadastrar.UseVisualStyleBackColor = false;
             this.btn_Cadastrar.Click += new System.EventHandler(this.btn_Cadastrar_Click);
             // 
             // btn_Cancelar
             // 
+            this.btn_Cancelar.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btn_Cancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_Cancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Cancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Cancelar.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btn_Cancelar.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btn_Cancelar.Location = new System.Drawing.Point(406, 392);
             this.btn_Cancelar.Name = "btn_Cancelar";
             this.btn_Cancelar.Size = new System.Drawing.Size(120, 70);
             this.btn_Cancelar.TabIndex = 7;
             this.btn_Cancelar.Text = "Cancelar";
-            this.btn_Cancelar.UseVisualStyleBackColor = true;
+            this.btn_Cancelar.UseVisualStyleBackColor = false;
             this.btn_Cancelar.Click += new System.EventHandler(this.btn_Cancelar_Click);
             // 
             // btn_Listar
             // 
+            this.btn_Listar.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btn_Listar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_Listar.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Listar.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Listar.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btn_Listar.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btn_Listar.Location = new System.Drawing.Point(658, 392);
             this.btn_Listar.Name = "btn_Listar";
             this.btn_Listar.Size = new System.Drawing.Size(120, 70);
             this.btn_Listar.TabIndex = 8;
             this.btn_Listar.Text = "Listar";
-            this.btn_Listar.UseVisualStyleBackColor = true;
+            this.btn_Listar.UseVisualStyleBackColor = false;
             this.btn_Listar.Visible = false;
             this.btn_Listar.Click += new System.EventHandler(this.btn_Listar_Click);
             // 
             // btn_alterar
             // 
+            this.btn_alterar.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btn_alterar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_alterar.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_alterar.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_alterar.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btn_alterar.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btn_alterar.Location = new System.Drawing.Point(532, 392);
+            this.btn_alterar.Location = new System.Drawing.Point(532, 391);
             this.btn_alterar.Name = "btn_alterar";
             this.btn_alterar.Size = new System.Drawing.Size(120, 70);
             this.btn_alterar.TabIndex = 9;
             this.btn_alterar.Text = "Alterar";
-            this.btn_alterar.UseVisualStyleBackColor = true;
+            this.btn_alterar.UseVisualStyleBackColor = false;
             this.btn_alterar.Visible = false;
             this.btn_alterar.Click += new System.EventHandler(this.btn_alterar_Click);
             // 
@@ -187,15 +195,17 @@
             // 
             // btn_Excluir
             // 
+            this.btn_Excluir.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btn_Excluir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_Excluir.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Excluir.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Excluir.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btn_Excluir.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btn_Excluir.Location = new System.Drawing.Point(784, 392);
             this.btn_Excluir.Name = "btn_Excluir";
             this.btn_Excluir.Size = new System.Drawing.Size(120, 70);
             this.btn_Excluir.TabIndex = 12;
             this.btn_Excluir.Text = "Excluir";
-            this.btn_Excluir.UseVisualStyleBackColor = true;
+            this.btn_Excluir.UseVisualStyleBackColor = false;
             this.btn_Excluir.Visible = false;
             this.btn_Excluir.Click += new System.EventHandler(this.btn_Excluir_Click);
             // 

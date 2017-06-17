@@ -15,6 +15,8 @@ namespace Artigo
     {
         private Conexao con = null;// abrir o banco
         public SqlConnection ConnectOpen = null; //Abrir a conexão
+        private string status;
+        private int reprovar;
 
         public Justificar()
         {
@@ -25,6 +27,7 @@ namespace Artigo
 
         private void btn_Salvar_Click(object sender, EventArgs e)
         {
+          
             DataLogin data = new DataLogin();
             string datahora_avaliacao = data.retornarData();
 
@@ -66,12 +69,27 @@ namespace Artigo
 
             if (dt.Rows.Count > 0)
             {
-                string sql = "UPDATE Revisao SET justificativa = @justificativa,datahora_avaliacao = @datahora_avaliacao,id_artigo = @id_artigo, id_usuario = @id_usuario WHERE id_artigo = " + Artigo.idartigo;
+                string sql = "UPDATE Revisao SET status = @status, justificativa = @justificativa,datahora_avaliacao = @datahora_avaliacao,id_artigo = @id_artigo, id_usuario = @id_usuario WHERE id_artigo = " + Artigo.idartigo;
 
                 SqlCommand command = null;
                 try
                 {
+                    //Verificando se o botão "Reprovar" da tela Artigo foi clicado.
+                    reprovar = Artigo.reprovar;
+                    if(reprovar > 0)
+                    {
+                        status = "Pendente";
+                        //zerando a variavel da classe artigo para os casos que não for clicado em "Reprovar";
+                        Artigo at = new Artigo();
+                        at.setReprovar(0);
+                    }
+                    else
+                    {
+                        status = "Não revisado";
+                    }
+
                     command = new SqlCommand(sql.ToString(), ConnectOpen);
+                    command.Parameters.Add(new SqlParameter("@status", status));
                     command.Parameters.Add(new SqlParameter("@justificativa", text_Justificativa.Text));
                     command.Parameters.Add(new SqlParameter("@datahora_avaliacao", datahora_avaliacao));
                     command.Parameters.Add(new SqlParameter("@id_artigo", Artigo.idartigo));
@@ -93,11 +111,10 @@ namespace Artigo
                 MessageBox.Show("Artigo nao associado, não pode ser justificado");
             }
             
-                
-
             Artigo artigo = new Artigo();
             artigo.Hide();
-       } 
+       }
+
    }
 }
 

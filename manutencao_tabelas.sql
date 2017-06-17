@@ -17,9 +17,16 @@ ALTER TABLE [dbo].[Artigo] DROP CONSTRAINT fk_artigo_id;
 
 insert into Revisao(nome_revisor,status,id_artigo) values('Revisor','Aprovado',13);
 
+//Inner join em 2 tabelas
 select a.idartigo,a.titulo, r.status
-from Artigo a inner join Revisao r on a.Id = r.fk_artigo_id
-where r.id_artigo = 14;
+from Artigo a inner join Revisao r on a.idartigo = r.id_artigo;
+
+//Inner join em 3 tabelas
+select a.titulo,ra.area, u.nome FROM (
+	Artigo a INNER JOIN Area_interesse_artigo ra 
+	ON a.id_area_interesse_fk = ra.idarea_interesse_artigo
+)
+INNER JOIN Usuarios u ON a.id_usuario = u.idusuario;
 
 PRIMARY KEY CLUSTERED ([idartigo] ASC)
 

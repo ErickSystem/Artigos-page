@@ -18,6 +18,7 @@ namespace Artigo
         public SqlConnection ConnectOpen = null; //Abrir a conexão
         public static int idartigo;
         private int idArea;
+        public static int reprovar = 0;
 
         public Artigo()
         {
@@ -110,7 +111,7 @@ namespace Artigo
                 {
                     string areaTela = cmb_areaInter.Text;
                     var areas = listAreas.SingleOrDefault(x => x.area == areaTela);
-
+                    //Pegando o id da area de interesse
                     idArea = areas.id;
                 }
                 else
@@ -169,7 +170,7 @@ namespace Artigo
             SqlDataAdapter da = new SqlDataAdapter(sqlArtigo, conn);
             da.Fill(dtArtigo);
 
-            int codArea_fk = Convert.ToInt16(dtArtigo.Rows[0][7]);
+            int codArea_fk = Convert.ToInt16(dtArtigo.Rows[0][8]);
 
             //Retornando apenas a area associada ao artigo
             var con = Login.ConnectOpen;
@@ -190,6 +191,7 @@ namespace Artigo
             btn_Reprovar.Visible = true;
             btn_Deletar.Visible = true;
             btn_Submeter.Visible = false;
+            btn_Alterar.Visible = true;
 
         }
 
@@ -211,36 +213,7 @@ namespace Artigo
             DataTable dt = new DataTable();
             SqlDataAdapter da = new SqlDataAdapter(sqlRevisor, conn);
             da.Fill(dt);
-            //Se o artigo ainda não tiver sido avaliado, será inserido na tabela Revisao
-            if (dt.Rows.Count <= 0)
-            {
-                StringBuilder sql = new StringBuilder();
-                sql.Append("Insert into Revisao(status, datahora_avaliacao,id_artigo,id_usuario)");
-                sql.Append("Values (@status, @datahora_avaliacao,@id_artigo,@id_usuario)");
 
-                SqlCommand command = null;
-                try
-                {
-                    command = new SqlCommand(sql.ToString(), ConnectOpen);
-                    command.Parameters.Add(new SqlParameter("@status", status));
-                    command.Parameters.Add(new SqlParameter("@datahora_avaliacao", datahora_aprovacao));
-                    command.Parameters.Add(new SqlParameter("@id_artigo", idartigo));
-                    command.Parameters.Add(new SqlParameter("@id_usuario", id_usuario));
-
-                    //utilizado para executar o comando SQL, se não tiver esse comando não insere nada no banco!
-                    command.ExecuteNonQuery();
-                    MessageBox.Show("Aprovado com sucesso!");
-                    Hide();
-                }
-                catch (Exception)
-                {
-                    MessageBox.Show("Erro ao aprovar");
-                    throw;
-                }
-            }
-            //Se o artigo já tiver sido inserido, será apenas ataulizado a avaliação
-            else
-            {
                 string sql = "UPDATE Revisao SET status = @status WHERE id_artigo = " + idartigo;
 
                 SqlCommand command = null;
@@ -262,12 +235,34 @@ namespace Artigo
                     MessageBox.Show("Erro ao Aprovado!");
                     throw;
                 }
-            }
 
+            //Alterando justificativa
+            string sqlJustificativa = "UPDATE Revisao SET  justificativa = @justificativa WHERE id_artigo = " + Artigo.idartigo;
+
+            SqlCommand cmm = null;
+            try
+            {
+                string justificativa = " ";
+                cmm = new SqlCommand(sqlJustificativa.ToString(), ConnectOpen);
+                cmm.Parameters.Add(new SqlParameter("@justificativa", justificativa));
+                cmm.Parameters.Add(new SqlParameter("@id_artigo", Artigo.idartigo));
+                cmm.Parameters.Add(new SqlParameter("@id_usuario", Login.idusuario));
+
+                //utilizado para executar o comando SQL, se não tiver esse comando não insere nada no banco!
+                cmm.ExecuteNonQuery();
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Erro ao Justificar!");
+                throw;
+            }
         }
+
         private void btn_Reprovar_Click(object sender, EventArgs e)
         {
-            
+            //receberá um valor 1 quando for clicado, para poder user de referencia na teal Justificativa.
+            reprovar++;
+
             int id_usuario = Login.idusuario;
             string status = "Reprovado";
             DataLogin ds = new DataLogin();
@@ -390,6 +385,93 @@ namespace Artigo
             cmb_areaInter.DisplayMember = "area";
             cmb_areaInter.SelectedItem = "";
             cmb_areaInter.Refresh(); //faz uma nova busca no BD para preencher os valores da cb de departamentos.
+        }
+
+        private void btn_Alterar_Click(object sender, EventArgs e)
+        {
+            SqlDataReader rdr;
+            SqlCommand cmd;
+            var conn = Login.ConnectOpen;
+
+            if (artigo_Titulo.Text == "" && artigo_Conteudo.Text == "" && cmb_areaInter.Text == "")
+            {
+                MessageBox.Show("Preencha todos os campos para salvar");
+            }
+            else if (artigo_Titulo.Text != "" && artigo_Conteudo.Text != "" && cmb_areaInter.Text != "")
+            {
+                cmd = new SqlCommand("Select * from Area_interesse_artigo", conn);
+                rdr = cmd.ExecuteReader();
+                //Utilizando para adicionar o resultado do select no objeto "AREA" depois add na listAreas
+                if (cmb_areaInter.Text != "")
+                {
+                    listAreas.Clear();
+                    while (rdr.Read())
+                    {
+                        var area = new Area();
+                        area.area = rdr.GetValue(1).ToString();
+                        area.id = Convert.ToInt16(rdr.GetValue(0).ToString());
+                        listAreas.Add(area);
+                    }
+                }
+                else
+                {
+                    while (rdr.Read())
+                    {
+                        var area = new Area();
+                        area.area = rdr.GetValue(1).ToString();
+                        area.id = Convert.ToInt16(rdr.GetValue(0).ToString());
+                        listAreas.Add(area);
+                    }
+                }
+                //Aqui é testado se a lista não está vazia, depois é apresentado na tela a area selecionada.
+                if (listAreas.Count > 0)
+                {
+                    string areaTela = cmb_areaInter.Text;
+                    var areas = listAreas.SingleOrDefault(x => x.area == areaTela);
+                    //Pegando o id da area de interesse
+                    idArea = areas.id;
+                }
+                else
+                {
+                    MessageBox.Show("Lista vazia!");
+                    return;
+                }
+
+                string sql = "UPDATE Artigo SET titulo = @titulo, conteudo = @conteudo, datahora_atualizado = @datahora_atualizado WHERE idartigo = " + idartigo;
+
+                DataLogin ds = new DataLogin();
+                string datahora_atualizao = ds.retornarData();
+                SqlCommand command = null;
+                try
+                {
+                    command = new SqlCommand(sql.ToString(), ConnectOpen);
+                    command.Parameters.Add(new SqlParameter("@titulo", artigo_Titulo.Text));
+                    command.Parameters.Add(new SqlParameter("@conteudo", artigo_Conteudo.Text));
+                    command.Parameters.Add(new SqlParameter("@datahora_atualizado", datahora_atualizao));
+                    command.Parameters.Add(new SqlParameter("@id_usuario", Login.idusuario));
+                    command.Parameters.Add(new SqlParameter("@id_area_interesse_fk", idArea));
+
+                    //utilizado para executar o comando SQL, se não tiver esse comando não insere nada no banco!
+                    command.ExecuteNonQuery();
+                    MessageBox.Show("Artigo atualizado com sucesso!");
+                    rdr.Close();
+                    
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("Erro ao atualizar Artigo");
+                    throw;
+                }
+            }//Fim do if else
+            else
+            {
+                MessageBox.Show("Ainda há campos vazios.");
+            }
+
+        }
+        public void setReprovar(int zerar)
+        {
+            Artigo.reprovar = zerar;
         }
     }
 }

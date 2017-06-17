@@ -110,14 +110,16 @@
             // 
             // btn_sair
             // 
+            this.btn_sair.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btn_sair.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_sair.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_sair.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btn_sair.Location = new System.Drawing.Point(1065, 9);
             this.btn_sair.Name = "btn_sair";
             this.btn_sair.Size = new System.Drawing.Size(110, 58);
             this.btn_sair.TabIndex = 7;
             this.btn_sair.Text = "Sair";
-            this.btn_sair.UseVisualStyleBackColor = true;
+            this.btn_sair.UseVisualStyleBackColor = false;
             this.btn_sair.Click += new System.EventHandler(this.btn_sair_Click);
             // 
             // label2
