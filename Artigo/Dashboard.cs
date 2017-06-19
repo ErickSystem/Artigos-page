@@ -62,6 +62,8 @@ namespace Artigo
         }
         private void btn_sair_Click(object sender, EventArgs e)
         {
+            Login.perfilUser = 0;
+
             //Gera uma caixa de alerta solicitando confirmação para excluir usuário.
             DialogResult resposta = MessageBox.Show("Deseja mesmo sair?", "Deslogar", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (resposta == DialogResult.Yes)

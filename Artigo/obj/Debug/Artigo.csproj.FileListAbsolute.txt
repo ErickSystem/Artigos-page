@@ -89,3 +89,9 @@ h:\Users\Usuario\Downloads\Artigos-page\Artigo\obj\Debug\Artigo.Login.resources
 h:\Users\Usuario\Downloads\Artigos-page\Artigo\obj\Debug\Artigo.Properties.Resources.resources
 h:\Users\Usuario\Downloads\Artigos-page\Artigo\obj\Debug\Artigo.Status_artigos.resources
 h:\Users\Usuario\Downloads\Artigos-page\Artigo\obj\Debug\Artigo.csproj.GenerateResource.Cache
+E:\executaveis liberados\Artigos-page\Artigo\obj\Debug\Artigo.AreaInteresse.resources
+E:\executaveis liberados\Artigos-page\Artigo\obj\Debug\Artigo.Artigo.resources
+E:\executaveis liberados\Artigos-page\Artigo\obj\Debug\Artigo.Enviados.resources
+E:\executaveis liberados\Artigos-page\Artigo\obj\Debug\Artigo.Justificar.resources
+E:\executaveis liberados\Artigos-page\Artigo\obj\Debug\Artigo.ListarArtigo.resources
+E:\executaveis liberados\Artigos-page\Artigo\obj\Debug\Artigo.Status_artigos.resources
